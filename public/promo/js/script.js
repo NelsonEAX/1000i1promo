@@ -378,21 +378,26 @@ $document.ready(function() {
             }
         });
     }
+    // https://github.com/T00rk/bootstrap-material-datetimepicker
     if (plugins.bootstrapDateTimePicker.length) {
         var i;
         for (i = 0; i < plugins.bootstrapDateTimePicker.length; i++) {
             var $dateTimePicker = $(plugins.bootstrapDateTimePicker[i]);
             var options = {};
-            options['format'] = 'dddd DD MMMM YYYY - HH:mm';
-            if ($dateTimePicker.attr("date-time-picker") == "date") {
-                options['format'] = 'dddd DD MMMM YYYY';
+            options['format'] = 'DD/MM/YYYY';
+            /*if ($dateTimePicker.attr("date-time-picker") == "date") {
+                options['format'] = 'DD/MM/YYYY';
                 options['minDate'] = new Date();
             } else if ($dateTimePicker.attr("date-time-picker") == "time") {
                 options['format'] = 'HH:mm';
             }
             options["time"] = ($dateTimePicker.attr("date-time-picker") != "date");
-            options["date"] = ($dateTimePicker.attr("date-time-picker") != "time");
-            options["shortTime"] = true;
+            options["date"] = ($dateTimePicker.attr("date-time-picker") != "time");*/
+            options["time"] = false;
+            options["date"] = true;
+            //options["shortTime"] = true;
+            var date = new Date();
+            options["minDate"] = date;
             $dateTimePicker.bootstrapMaterialDatePicker(options);
         }
     }
@@ -627,8 +632,8 @@ $document.ready(function() {
         for (i = 0; i < plugins.calendar.length; i++) {
             var calendarItem = $(plugins.calendar[i]);
             calendarItem.rdCalendar({
-                days: calendarItem.attr("data-days") ? calendarItem.attr("data-days").split(/\s?,\s?/i) : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                month: calendarItem.attr("data-months") ? calendarItem.attr("data-months").split(/\s?,\s?/i) : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                days: calendarItem.attr("data-days") ? calendarItem.attr("data-days").split(/\s?,\s?/i) : ['Воскресение', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+                month: calendarItem.attr("data-months") ? calendarItem.attr("data-months").split(/\s?,\s?/i) : ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
             });
         }
     }

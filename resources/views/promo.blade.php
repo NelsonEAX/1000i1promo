@@ -11,7 +11,7 @@
     <link rel="icon" href="promo/images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Trocchi%7COpen+Sans:300,300italic,400,600,700">
-    <link rel="stylesheet" href="promo/css/style.css">
+    <link rel="stylesheet" type="text/css" href="promo/css/style.css">
     <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;">
         <a href="http://windows.microsoft.com/en-US/internet-explorer/">
@@ -29,13 +29,18 @@
     <!-- Page Header-->
     <header class="page-header">
         <div class="navigation">
-            <div class="navigation-inner"><a href="default.htm" class="navigation-logo"><img src="promo/images/logo.png" width="124" height="28" alt=""></a></div>
+            <div class="navigation-inner">
+                <a href="default.htm" class="navigation-logo">
+                    <img src="promo/images/logo.png" width="124" height="28" alt="">
+                </a>
+            </div>
             <div class="navigation-contacts">
                 <div class="media">
                     <div class="media-left"><span class="icon fa-phone"></span></div>
                     <div class="media-body">
                         <p>Звони:</p>
-                        <a href="callto:#">89222959125</a>
+                        <a href="callto:#">{{ $phone }}</a>
+                        <p>WhatsApp/Viber</p>
                     </div>
                 </div>
             </div>
@@ -52,21 +57,22 @@
                         + БЕСПЛАТНАЯ ДОСТАВКА
                     </p>
                 </div>
-                <div class="cell-md-4 img-wrapper veil reveal-lg-block"><img src="promo/images/header-01.png" width="385" height="561" alt="" class="img-positioning"></div>
+                <div class="cell-md-4 img-wrapper veil reveal-lg-block">
+                    <img src="promo/images/header-01.png" width="385" height="561" alt="" class="img-positioning">
+                </div>
                 <div class="offset-top-0 cell-sm-8 cell-md-5 cell-lg-4 section-lg-top-100 section-md-bottom-120 section-md-top-60 section-top-34 section-bottom-60">
-                    <!-- RD Mailform-->
-                    <form data-form-output="form-output-global" data-form-type="order" method="post" action="bat/rd-mailform.php.htm" class="rd-mailform text-left offset-md-left--30 form-order">
-                        <div class="form-group"><span class="form-icon fa-calendar"></span>
-                            <label for="contact-name" class="form-label">Select Date</label>
-                            <input id="contact-name" data-time-picker="date" type="text" name="date" data-constraints="@Required" class="form-control">
+                    <form method="post" action="bat/rd-mailform.php.htm" class="rd-mailform text-left offset-md-left--30 form-order">
+                        <div class="form-group rd-calendar"><span class="form-icon fa-calendar"></span>
+                            <label for="date" class="form-label">Выберете дату</label>
+                            <input id="date" data-time-picker="date" type="text" name="date" class="form-control">
                         </div>
                         <div class="form-group"><span class="form-icon fa-phone"></span>
-                            <label for="contact-phone" class="form-label">Phone</label>
-                            <input id="contact-phone" type="text" name="phone" data-constraints="@Required @Integer" class="form-control">
+                            <label for="phone" class="form-label">Телефон</label>
+                            <input id="phone" type="text" name="phone" class="form-control">
                         </div>
                         <div class="form-group"><span class="form-icon fa-envelope-o"></span>
-                            <label for="contact-email" class="form-label">E-mail</label>
-                            <input id="contact-email" type="email" name="email" data-constraints="@Email @Required" class="form-control">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input id="email" type="email" name="email" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-block">Отправить заказ</button>
                     </form>
@@ -113,6 +119,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="context-dark section-90 bg-success-grad">
+            <div class="shell">
+                <h2>Наш прайс</h2>
+                <div class="offset-top-10">
+                    <img src="promo/images/price.png" alt="" class="img-responsive center-block reveal-inline-block">
+                </div>
+                <a href="promo/uploads/price.xlsx" class="btn btn-white offset-top-30 btn-sm">Скачать</a>
             </div>
         </section>
         <section class="section-90">
@@ -179,6 +194,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="promo/uploads/price.xlsx" class="btn btn-default offset-top-30 btn-sm">Скачать прайс на комплектующие</a>
             </div>
         </section>
         <section class="section-90 bg-warning context-dark">
@@ -186,30 +202,53 @@
                 <h2>Фото наших работ:</h2>
                 <!-- PhotoSwipe-->
                 <div data-photo-swipe-gallery="gallery" class="range">
-                    <div class="cell-sm-6 cell-md-4"><a data-photo-swipe-item="" data-size="1000x667" href="promo/images/index-02_original.jpg" data-author="Michael Hull" class="thumbnail"><img width="351" height="220" src="promo/images/index-02.jpg" alt="">
+                    <div class="cell-sm-6 cell-md-4">
+                        <a data-photo-swipe-item="" data-size="1000x667" href="promo/images/index-02_original.jpg" data-author="Michael Hull" class="thumbnail">
+                            <img width="351" height="220" src="promo/images/index-02.jpg" alt="">
                             <div class="caption">
                                 <div class="caption-overlay"></div>
-                            </div></a></div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0"><a data-photo-swipe-item="" data-size="1000x667" href="promo/images/index-03_original.jpg" class="thumbnail"><img width="351" height="220" src="promo/images/index-03.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0">
+                        <a data-photo-swipe-item="" data-size="1000x667" href="promo/images/index-03_original.jpg" class="thumbnail">
+                            <img width="351" height="220" src="promo/images/index-03.jpg" alt="">
                             <div class="caption">
                                 <div class="caption-overlay"></div>
-                            </div></a></div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0"><a data-photo-swipe-item="" data-size="1000x669" href="promo/images/index-04_original.jpg" class="thumbnail"><img width="351" height="220" src="promo/images/index-04.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0">
+                        <a data-photo-swipe-item="" data-size="1000x669" href="promo/images/index-04_original.jpg" class="thumbnail">
+                            <img width="351" height="220" src="promo/images/index-04.jpg" alt="">
                             <div class="caption">
                                 <div class="caption-overlay"></div>
-                            </div></a></div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30"><a data-photo-swipe-item="" data-size="1000x664" href="promo/images/index-05_original.jpg" data-author="Michael Hull" class="thumbnail"><img width="351" height="220" src="promo/images/index-05.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cell-sm-6 cell-md-4 offset-top-30">
+                        <a data-photo-swipe-item="" data-size="1000x664" href="promo/images/index-05_original.jpg" data-author="Michael Hull" class="thumbnail">
+                            <img width="351" height="220" src="promo/images/index-05.jpg" alt="">
                             <div class="caption">
                                 <div class="caption-overlay"></div>
-                            </div></a></div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30"><a data-photo-swipe-item="" data-size="1000x656" href="promo/images/index-06_original.jpg" class="thumbnail"><img width="351" height="220" src="promo/images/index-06.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cell-sm-6 cell-md-4 offset-top-30">
+                        <a data-photo-swipe-item="" data-size="1000x656" href="promo/images/index-06_original.jpg" class="thumbnail">
+                            <img width="351" height="220" src="promo/images/index-06.jpg" alt="">
                             <div class="caption">
                                 <div class="caption-overlay"></div>
-                            </div></a></div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30"><a data-photo-swipe-item="" data-size="750x1000" href="promo/images/index-07_original.jpg" class="thumbnail"><img width="351" height="220" src="promo/images/index-07.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cell-sm-6 cell-md-4 offset-top-30"><a data-photo-swipe-item="" data-size="750x1000" href="promo/images/index-07_original.jpg" class="thumbnail">
+                            <img width="351" height="220" src="promo/images/index-07.jpg" alt="">
                             <div class="caption">
                                 <div class="caption-overlay"></div>
-                            </div></a></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -217,19 +256,56 @@
             <div class="shell">
                 <h2>Как мы работаем:</h2>
                 <!-- Owl Carousel-->
-                <div data-dots="true" data-items="1" data-xs-items="2" data-sm-items="2" data-md-items="3" data-lg-items="3" data-loop="true" data-margin="30" data-mouse-drag="false" class="offset-top-55 owl-carousel owl-carousel-dots-dark">
-                    <div class="item"><img src="promo/images/index-08.png" width="370" height="417" alt="" class="img-responsive center-block">
-                        <h6><a href="#" class="text-base">George Emberson</a></h6>
-                        <p class="text-gray"><span class="icon fa-trophy"></span>2012 Champion</p>
+                <div data-dots="true" data-items="5" data-xs-items="2" data-sm-items="2" data-md-items="5" data-lg-items="5"
+                     data-loop="false" data-margin="30" data-mouse-drag="false" class="offset-top-55 owl-carousel owl-carousel-dots-dark"
+                     data-dots-each="2">
+                    <div class="item">
+                        <h6><a href="#" class="text-base">Шаг 1</a></h6>
+                        <p class="text-gray">
+                            <span class="text-danger">Вы</span>
+                            отправляете свой заказ
+                        </p>
+                        <p class="text-gray">whatsApp: {{ $phone }}</p>
+                        <p class="text-gray">Viber: {{ $phone }}</p>
+                        <p class="text-gray">Email:	{{ $email }}</p>
+                        <p class="text-gray">Форма заказа на нашем сайте</p>
                     </div>
-                    <div class="item"><img src="promo/images/index-09.png" width="370" height="417" alt="" class="img-responsive center-block">
-                        <h6><a href="#" class="text-base">Amanda Liroy</a></h6>
-                        <p class="text-gray"><span class="icon fa-trophy"></span>2015 Champion</p>
+                    <div class="item">
+                        <h6><a href="#" class="text-base">Шаг 2</a></h6>
+                        <p class="text-gray">
+                            <span class="text-danger">Мы</span>
+                            строим потолки в программе, Отправляем чертежи на согласование
+                        </p>
+                        <p class="text-gray">Выставляем общий счет</p>
                     </div>
-                    <div class="item"><img src="promo/images/index-10.png" width="370" height="417" alt="" class="img-responsive center-block">
-                        <h6><a href="#" class="text-base">Sam Brown</a></h6>
-                        <p class="text-gray"><span class="icon fa-trophy"></span>2014 Champion</p>
+                    <div class="item">
+                        <h6><a href="#" class="text-base">Шаг 3</a></h6>
+                        <p class="text-gray">
+                            <span class="text-danger">Вы</span>
+                            проверяетет чертежи и счет и если всё верно оплачиваете
+                            счёт любым пердложенным способом. (электронным)
+                        </p>
                     </div>
+                    <div class="item">
+                        <h6><a href="#" class="text-base">Шаг 4</a></h6>
+                        <p class="text-gray">
+                            <span class="text-danger">Мы</span>
+                            получив оплату, ставим ваш заказ
+                            в очередь на изготовление. Лаковые полотна
+                            запускаем в работу не раньше чем за 2 дня
+                            до даты изготовления.
+                        </p>
+                    </div>
+                    <div class="item">
+                        <h6><a href="#" class="text-base">Шаг 5</a></h6>
+                        <p class="text-gray">
+                            <span class="text-danger">Вы</span>
+                            просыпаетесь, делаете спокойно все свои домашние дела
+                            (ведь мы вам уже привезли заказ) и спокойно едите на объект.
+                        </p>
+                        <p class="text-info">экономьте до 2х часов в день!</p>
+                    </div>
+                    <div class="item"></div>
                 </div>
             </div>
         </section>
@@ -239,32 +315,45 @@
                 <div class="offset-top--10">
                     <!-- Owl Carousel-->
                     <div data-dots="true" data-items="1" data-xs-items="2" data-sm-items="3" data-lg-items="4" data-loop="true" data-margin="30" data-mouse-drag="false" class="owl-carousel">
-                        <div class="thumbnail-variant-1"><a href="#" class="reveal-inline-block"><img src="promo/images/index-11.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block"></a>
+                        <div class="thumbnail-variant-1">
+                            <a href="#" class="reveal-inline-block">
+                                <img src="promo/images/index-11.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                            </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a href="#" class="text-white">Beer</a></h6>
                                 <p class="text-warning text-sbold big">$8,99</p>
                             </div>
                         </div>
-                        <div class="thumbnail-variant-1"><a href="#" class="reveal-inline-block"><img src="promo/images/index-12.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block"></a>
+                        <div class="thumbnail-variant-1">
+                            <a href="#" class="reveal-inline-block">
+                                <img src="promo/images/index-12.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                            </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a href="#" class="text-white">Ice cream</a></h6>
                                 <p class="text-warning text-sbold big">$1,99</p>
                             </div>
                         </div>
-                        <div class="thumbnail-variant-1"><a href="#" class="reveal-inline-block"><img src="promo/images/index-13.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block"></a>
+                        <div class="thumbnail-variant-1">
+                            <a href="#" class="reveal-inline-block">
+                                <img src="promo/images/index-13.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                            </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a href="#" class="text-white">Burger</a></h6>
                                 <p class="text-warning text-sbold big">$5,99</p>
                             </div>
                         </div>
-                        <div class="thumbnail-variant-1"><a href="#" class="reveal-inline-block"><img src="promo/images/index-15.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block"></a>
+                        <div class="thumbnail-variant-1">
+                            <a href="#" class="reveal-inline-block">
+                                <img src="promo/images/index-15.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                            </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a href="#" class="text-white">Cocktail</a></h6>
                                 <p class="text-warning text-sbold big">$12,99</p>
                             </div>
                         </div>
                     </div>
-                </div><a href="#" class="btn btn-white offset-top-30 btn-sm">Посмотреть все</a>
+                </div>
+                <a href="#" class="btn btn-white offset-top-30 btn-sm">Посмотреть все</a>
             </div>
         </section>
         <section class="section-90">
@@ -308,7 +397,7 @@
                 <div class="cell-md-3 cell-sm-6">
                     <div class="footer-divider"><span class="icon icon-lg text-warning fa-phone"></span>
                         <p class="text-uppercase text-success footer-heading">Телефон</p>
-                        <p><a href="callto:#">89222959125</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
+                        <p><a href="callto:#">{{ $phone }}</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
                     </div>
                 </div>
                 <div class="cell-md-3 cell-sm-6 offset-top-30 offset-sm-top-0">
