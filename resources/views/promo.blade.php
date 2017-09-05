@@ -61,21 +61,33 @@
                     <img src="promo/images/header-01.png" width="385" height="561" alt="" class="img-positioning">
                 </div>
                 <div class="offset-top-0 cell-sm-8 cell-md-5 cell-lg-4 section-lg-top-100 section-md-bottom-120 section-md-top-60 section-top-34 section-bottom-60">
-                    <form method="post" action="bat/rd-mailform.php.htm" class="rd-mailform text-left offset-md-left--30 form-order">
-                        <div class="form-group rd-calendar"><span class="form-icon fa-calendar"></span>
+                    {{ Form::open([
+                        'url' => 'promo/order',
+                        //'action' => 'PromoController@mail',
+                        'method' => 'post',
+                        'files' => true,
+                        'class' => 'rd-mailform text-left offset-md-left--30 form-order'
+                    ]) }}
+{{--                        {{ csrf_field() }}--}}
+                    {{--<form method="post" action="bat/rd-mailform.php.htm" class="rd-mailform text-left offset-md-left--30 form-order">--}}
+                        <div class="form-group rd-calendar">
+                            <span class="form-icon fa-calendar"></span>
                             <label for="date" class="form-label">Выберете дату</label>
                             <input id="date" data-time-picker="date" type="text" name="date" class="form-control">
                         </div>
-                        <div class="form-group"><span class="form-icon fa-phone"></span>
+                        <div class="form-group">
+                            <span class="form-icon fa-phone"></span>
                             <label for="phone" class="form-label">Телефон</label>
                             <input id="phone" type="text" name="phone" class="form-control">
                         </div>
-                        <div class="form-group"><span class="form-icon fa-envelope-o"></span>
+                        <div class="form-group">
+                            <span class="form-icon fa-envelope-o"></span>
                             <label for="email" class="form-label">E-mail</label>
                             <input id="email" type="email" name="email" class="form-control">
                         </div>
+                        {{ Form::file('images[]', ['multiple' => true, 'class' => 'btn btn-file']) }}
                         <button type="submit" class="btn btn-block">Отправить заказ</button>
-                    </form>
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
@@ -130,73 +142,73 @@
                 <a href="promo/uploads/price.xlsx" class="btn btn-white offset-top-30 btn-sm">Скачать</a>
             </div>
         </section>
-        <section class="section-90">
-            <div class="shell">
-                <h2>Дополнительные работы</h2>
-                <div class="range range-md-middle range-xs-center">
-                    <div class="cell-md-4 cell-sm-8 cell-md-push-1">
-                        <div class="pricing-box pricing-box-danger">
-                            <div class="pricing-box-title">Криволинейная спайка швов</div>
-                            <div class="pricing-box-panel">
-                                <div class="pricing-box-price">
-                                    <span class="pricing-box-price-counter">489</span>
-                                    <span class="pricing-box-price-sub">р</span>
-                                    <span class="pricing-box-price-sup">/ пог. м.</span>
-                                </div>
-                            </div>
-                            <div class="pricing-box-body">
-                                <ul class="list-marked">
-                                    <li>1 выгода</li>
-                                    <li>2 выгода</li>
-                                    <li>3 выгода</li>
-                                    <li>4 выгода</li>
-                                    <li>5 выгода</li>
-                                </ul><a href="#" class="btn-block btn btn-default">Заказать</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cell-md-4 cell-sm-6 offset-top-30">
-                        <div class="pricing-box pricing-box-warning pricing-box-right">
-                            <div class="pricing-box-title">Криволинейный гарпун</div>
-                            <div class="pricing-box-panel">
-                                <div class="pricing-box-price">
-                                    <span class="pricing-box-price-counter">99</span>
-                                    <span class="pricing-box-price-sub">р</span>
-                                    <span class="pricing-box-price-sup">/ пог. м.</span>
-                                </div>
-                            </div>
-                            <div class="pricing-box-body">
-                                <ul class="list-marked">
-                                    <li>1 выгода</li>
-                                    <li>2 выгода</li>
-                                    <li>3 выгода</li>
-                                </ul><a href="#" class="btn-block btn btn-default">Заказать</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cell-md-4 cell-sm-6 offset-top-30 cell-md-push-2">
-                        <div class="pricing-box pricing-box-success pricing-box-left">
-                            <div class="pricing-box-title">Внутренний вырез</div>
-                            <div class="pricing-box-panel">
-                                <div class="pricing-box-price">
-                                    <span class="pricing-box-price-counter">69</span>
-                                    <span class="pricing-box-price-sub">р</span>
-                                    <span class="pricing-box-price-sup">/ пог. м.</span>
-                                </div>
-                            </div>
-                            <div class="pricing-box-body">
-                                <ul class="list-marked">
-                                    <li>1 выгода</li>
-                                    <li>2 выгода</li>
-                                    <li>3 выгода</li>
-                                </ul><a href="#" class="btn-block btn btn-default">Заказать</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="promo/uploads/price.xlsx" class="btn btn-default offset-top-30 btn-sm">Скачать прайс на комплектующие</a>
-            </div>
-        </section>
+        {{--<section class="section-90">--}}
+            {{--<div class="shell">--}}
+                {{--<h2>Дополнительные работы</h2>--}}
+                {{--<div class="range range-md-middle range-xs-center">--}}
+                    {{--<div class="cell-md-4 cell-sm-8 cell-md-push-1">--}}
+                        {{--<div class="pricing-box pricing-box-danger">--}}
+                            {{--<div class="pricing-box-title">Криволинейная спайка швов</div>--}}
+                            {{--<div class="pricing-box-panel">--}}
+                                {{--<div class="pricing-box-price">--}}
+                                    {{--<span class="pricing-box-price-counter">489</span>--}}
+                                    {{--<span class="pricing-box-price-sub">р</span>--}}
+                                    {{--<span class="pricing-box-price-sup">/ пог. м.</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="pricing-box-body">--}}
+                                {{--<ul class="list-marked">--}}
+                                    {{--<li>1 выгода</li>--}}
+                                    {{--<li>2 выгода</li>--}}
+                                    {{--<li>3 выгода</li>--}}
+                                    {{--<li>4 выгода</li>--}}
+                                    {{--<li>5 выгода</li>--}}
+                                {{--</ul><a href="#" class="btn-block btn btn-default">Заказать</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="cell-md-4 cell-sm-6 offset-top-30">--}}
+                        {{--<div class="pricing-box pricing-box-warning pricing-box-right">--}}
+                            {{--<div class="pricing-box-title">Криволинейный гарпун</div>--}}
+                            {{--<div class="pricing-box-panel">--}}
+                                {{--<div class="pricing-box-price">--}}
+                                    {{--<span class="pricing-box-price-counter">99</span>--}}
+                                    {{--<span class="pricing-box-price-sub">р</span>--}}
+                                    {{--<span class="pricing-box-price-sup">/ пог. м.</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="pricing-box-body">--}}
+                                {{--<ul class="list-marked">--}}
+                                    {{--<li>1 выгода</li>--}}
+                                    {{--<li>2 выгода</li>--}}
+                                    {{--<li>3 выгода</li>--}}
+                                {{--</ul><a href="#" class="btn-block btn btn-default">Заказать</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="cell-md-4 cell-sm-6 offset-top-30 cell-md-push-2">--}}
+                        {{--<div class="pricing-box pricing-box-success pricing-box-left">--}}
+                            {{--<div class="pricing-box-title">Внутренний вырез</div>--}}
+                            {{--<div class="pricing-box-panel">--}}
+                                {{--<div class="pricing-box-price">--}}
+                                    {{--<span class="pricing-box-price-counter">69</span>--}}
+                                    {{--<span class="pricing-box-price-sub">р</span>--}}
+                                    {{--<span class="pricing-box-price-sup">/ пог. м.</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="pricing-box-body">--}}
+                                {{--<ul class="list-marked">--}}
+                                    {{--<li>1 выгода</li>--}}
+                                    {{--<li>2 выгода</li>--}}
+                                    {{--<li>3 выгода</li>--}}
+                                {{--</ul><a href="#" class="btn-block btn btn-default">Заказать</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<a href="promo/uploads/price.xlsx" class="btn btn-default offset-top-30 btn-sm">Скачать прайс на комплектующие</a>--}}
+            {{--</div>--}}
+        {{--</section>--}}
         <section class="section-90 bg-warning context-dark">
             <div class="shell">
                 <h2>Фото наших работ:</h2>

@@ -32,4 +32,17 @@ class PromoController extends Controller
 
         return view('promo', $data);
     }
+
+    public function order(Request $request)
+    {
+        if($request->hasFile('images'))
+        {
+            $images = $request->file('images');
+            foreach ($images as $image) {
+                echo $image->getClientOriginalName()."\n";
+                //$image->store('users/' . $this->user->id . '/messages');
+            }
+        }
+        echo "хуйхуйхуйхуйхуйхуйхуй";
+    }
 }

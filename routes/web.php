@@ -18,4 +18,8 @@
 
 Auth::routes();
 Route::get('/', 'PromoController@index');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('promo/order', 'PromoController@order');
+
+
+
+//Route::get('/home', 'HomeController@index')->name('home');
