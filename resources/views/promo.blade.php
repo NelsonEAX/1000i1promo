@@ -68,8 +68,6 @@
                         'files' => true,
                         'class' => 'rd-mailform text-left offset-md-left--30 form-order'
                     ]) }}
-{{--                        {{ csrf_field() }}--}}
-                    {{--<form method="post" action="bat/rd-mailform.php.htm" class="rd-mailform text-left offset-md-left--30 form-order">--}}
                         <div class="form-group rd-calendar">
                             <span class="form-icon fa-calendar"></span>
                             <label for="date" class="form-label">Выберете дату</label>
@@ -82,18 +80,6 @@
                                 <option value="{{ $time_gap2 }}">Доставка с {{ $time_gap2 }}</option>
                                 <option value="{{ $time_gap3 }}">Доставка с {{ $time_gap3 }}</option>
                             </select>
-                            {{--<span class="form-icon fa-clock-o radio-inline"></span>--}}
-                            {{--<label for="time_gap1"  class="radio-inline">--}}
-                                {{--<input type="radio" id="time_gap1" name="time_gap" value="{{ $time_gap1 }}" class="">{{ $time_gap1 }}--}}
-                            {{--</label>--}}
-
-                            {{--<label for="time_gap2" class="">--}}
-                                {{--<input type="radio" id="time_gap2" name="time_gap" value="{{ $time_gap2 }}" class="">{{ $time_gap2 }}--}}
-                            {{--</label>--}}
-
-                            {{--<label for="time_gap3" class="">--}}
-                                {{--<input type="radio" id="time_gap3" name="time_gap" value="{{ $time_gap3 }}">{{ $time_gap3 }}--}}
-                            {{--</label>--}}
                         </div>
                         <div class="form-group">
                             <span class="form-icon fa-phone"></span>
@@ -107,8 +93,13 @@
                         </div>
                         <div class="form-group fileContainer">
                             <span class="form-icon fa-files-o"></span>
-                            <label for="images" class="form-label">Файлы</label>
-                            {{ Form::file('images[]', ['multiple' => true, /*'style' => 'opacity: 0;',*/ 'class' => 'form-control']) }}
+                            <label for="images" class="form-label" id="filesButton">Прикрепить файлы</label>
+                            {{ Form::file('images[]', [
+                                'multiple' => true, 
+                                'style' => 'opacity: 0;', 
+                                'class' => 'form-control',
+                                'accept' => $extention
+                            ]) }}
                         </div>
                         <button type="submit" class="btn btn-block">Отправить заказ</button>
                     {{ Form::close() }}

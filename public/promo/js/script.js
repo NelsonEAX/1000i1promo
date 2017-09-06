@@ -62,6 +62,27 @@ var userAgent = navigator.userAgent.toLowerCase(),
         imgZoom: $('[mag-thumb]')
     };
 $document.ready(function() {
+
+    var filesInput = document.querySelector('input[type="file"]')
+    var filesButton = document.querySelector('#filesButton')
+
+    function handleFileSelectChange(evt) {
+        var files = evt.target.files; // FileList object
+        filesButton.innerHTML = 'Выбрано файлов: ' + files.length;
+    }
+
+    function handleFileSelectOpen(evt) {
+        evt.preventDefault();
+        filesInput.click();
+    }
+
+    if (filesInput) {
+        filesInput.addEventListener('change', handleFileSelectChange, false);
+    }
+    if (filesButton) {
+        filesButton.addEventListener('click', handleFileSelectOpen, false);
+    }
+    
     function getSwiperHeight(object, attr) {
         var val = object.attr("data-" + attr),
             dim;

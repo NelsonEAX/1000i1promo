@@ -31,6 +31,13 @@ class PromoController extends Controller
         $data['time_gap2'] = "13-17";
         $data['time_gap3'] = "19-22";
 
+        $data['extention'] =    ".txt,.pdf,.djvu,".
+                                ".doc,.docx,".
+                                ".xls,.xlsx,".
+                                ".zip,.rar,.7z,.tar,.gzip,.gz,.jar,".
+                                ".jpg,.jpeg,.png,.bmp,.gif,.tiff,.ico,.raw".
+                                ".ec,.fs,.new,.sd2";
+
         return view('promo', $data);
     }
 
