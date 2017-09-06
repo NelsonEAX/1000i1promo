@@ -60,7 +60,7 @@
                 <div class="cell-md-4 img-wrapper veil reveal-lg-block">
                     <img src="promo/images/header-01.png" width="385" height="561" alt="" class="img-positioning">
                 </div>
-                <div class="offset-top-0 cell-sm-8 cell-md-5 cell-lg-4 section-lg-top-100 section-md-bottom-120 section-md-top-60 section-top-34 section-bottom-60">
+                <div class="offset-top-0 cell-sm-8 cell-md-5 cell-lg-4 section-top-34 section-bottom-60">
                     {{ Form::open([
                         'url' => 'promo/order',
                         //'action' => 'PromoController@mail',
@@ -76,16 +76,40 @@
                             <input id="date" data-time-picker="date" type="text" name="date" class="form-control">
                         </div>
                         <div class="form-group">
+                            <span class="form-icon fa-clock-o"></span>
+                            <select id="Доставка с " name="time" class="form-control" required>
+                                <option selected value="{{ $time_gap1 }}">Доставка с {{ $time_gap1 }}</option>
+                                <option value="{{ $time_gap2 }}">Доставка с {{ $time_gap2 }}</option>
+                                <option value="{{ $time_gap3 }}">Доставка с {{ $time_gap3 }}</option>
+                            </select>
+                            {{--<span class="form-icon fa-clock-o radio-inline"></span>--}}
+                            {{--<label for="time_gap1"  class="radio-inline">--}}
+                                {{--<input type="radio" id="time_gap1" name="time_gap" value="{{ $time_gap1 }}" class="">{{ $time_gap1 }}--}}
+                            {{--</label>--}}
+
+                            {{--<label for="time_gap2" class="">--}}
+                                {{--<input type="radio" id="time_gap2" name="time_gap" value="{{ $time_gap2 }}" class="">{{ $time_gap2 }}--}}
+                            {{--</label>--}}
+
+                            {{--<label for="time_gap3" class="">--}}
+                                {{--<input type="radio" id="time_gap3" name="time_gap" value="{{ $time_gap3 }}">{{ $time_gap3 }}--}}
+                            {{--</label>--}}
+                        </div>
+                        <div class="form-group">
                             <span class="form-icon fa-phone"></span>
                             <label for="phone" class="form-label">Телефон</label>
                             <input id="phone" type="text" name="phone" class="form-control">
                         </div>
                         <div class="form-group">
-                            <span class="form-icon fa-envelope-o"></span>
-                            <label for="email" class="form-label">E-mail</label>
-                            <input id="email" type="email" name="email" class="form-control">
+                            <span class="form-icon fa-map-marker"></span>
+                            <label for="adres" class="form-label">Адресс доставки</label>
+                            <input id="adres" type="text" name="adres" class="form-control">
                         </div>
-                        {{ Form::file('images[]', ['multiple' => true, 'class' => 'btn btn-file']) }}
+                        <div class="form-group fileContainer">
+                            <span class="form-icon fa-files-o"></span>
+                            <label for="images" class="form-label">Файлы</label>
+                            {{ Form::file('images[]', ['multiple' => true, /*'style' => 'opacity: 0;',*/ 'class' => 'form-control']) }}
+                        </div>
                         <button type="submit" class="btn btn-block">Отправить заказ</button>
                     {{ Form::close() }}
                 </div>

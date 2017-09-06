@@ -27,8 +27,9 @@ class PromoController extends Controller
         $data = [];
         $data['phone'] = "89222959125";
         $data['email'] = "zakaz1000i1@mail.ru";
-
-
+        $data['time_gap1'] = "7-11";
+        $data['time_gap2'] = "13-17";
+        $data['time_gap3'] = "19-22";
 
         return view('promo', $data);
     }

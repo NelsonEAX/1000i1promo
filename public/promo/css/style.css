@@ -28206,3 +28206,6 @@ a.pswp__share--download:hover {
 .img-thumbnail > div {
   width: 100%;
 }
+
+/**********************************************************/
+select option { background-color: #000000; }

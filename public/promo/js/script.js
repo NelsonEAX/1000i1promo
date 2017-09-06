@@ -44,7 +44,7 @@ var userAgent = navigator.userAgent.toLowerCase(),
         scroller: $(".scroll-wrap"),
         socialite: $(".socialite"),
         viewAnimate: $('.view-animate'),
-        selectFilter: $("select"),
+        //selectFilter: $("select"),
         rdInputLabel: $(".form-label"),
         stacktable: $("[data-responsive=true]"),
         bootstrapDateTimePicker: $("[data-time-picker]"),
@@ -493,7 +493,7 @@ $document.ready(function() {
             });
         }
     }
-    if (plugins.selectFilter.length) {
+    /*if (plugins.selectFilter.length) {
         var i;
         for (i = 0; i < plugins.selectFilter.length; i++) {
             var select = $(plugins.selectFilter[i]);
@@ -501,7 +501,7 @@ $document.ready(function() {
                 theme: "bootstrap"
             }).next().addClass(select.attr("class").match(/(input-sm)|(input-lg)|($)/i).toString().replace(new RegExp(",", 'g'), " "));
         }
-    }
+    }*/
     if (plugins.stepper.length) {
         plugins.stepper.stepper({
             labels: {
