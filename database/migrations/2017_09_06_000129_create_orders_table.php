@@ -16,7 +16,9 @@ class CreateOrdersTable extends Migration
         /** ЗАКАЗЫ */
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('customer_id')->index('customer_id')->comment('Ссылка на клиента');
+            $table->string('phone')->comment('Контактный телефон');
+            $table->string('date')->comment('Дата доставки');
+            $table->string('adres')->comment('Адрес доставки');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +28,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('order')->nullable()->index('order')->comment('Ссылка на заказ');
             $table->string('name', 255);
+            $table->string('ext', 10);
             $table->string('uuid', 36);
             $table->timestamps();
             $table->softDeletes();
