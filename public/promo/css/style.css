@@ -28215,3 +28215,11 @@ input:-webkit-autofill {
     -webkit-text-fill-color: #fff !important; /* цвет текста */
     color: #fff !important; /* цвет текста */
 }
+
+#dropdown-file-list {
+  width: 100%;
+}
+#divider-file-list {
+  margin: 0;
+  width: inherit;
+}

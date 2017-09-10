@@ -62,27 +62,59 @@ var userAgent = navigator.userAgent.toLowerCase(),
         imgZoom: $('[mag-thumb]')
     };
 $document.ready(function() {
+/** ***************************************************************************************************************** */
+   // var filesInput = document.querySelector('input[type="file"]')
+    var fileAddButton = document.querySelector('#file-add-button')
 
-    var filesInput = document.querySelector('input[type="file"]')
-    var filesButton = document.querySelector('#filesButton')
-
-    function handleFileSelectChange(evt) {
-        var files = evt.target.files; // FileList object
-        filesButton.innerHTML = 'Выбрано файлов: ' + files.length;
+    // Удаление элемента вместе с выбраным файлом
+    function handleDeleteLi(evt) {
+        var element = evt.currentTarget;
+        element.parentNode.removeChild(element);
+        evt.stopPropagation();
     }
 
-    function handleFileSelectOpen(evt) {
-        evt.preventDefault();
-        filesInput.click();
+    // Перехватываем имя выбранного файла
+    function handleGetFileName(evt) {
+        var files = evt.target.files;
+        var name = files[0].name;
+
+        var idLabel = evt.target.id.replace(/id/i, 'name');
+        var label = document.querySelector('#' + idLabel);
+        label.innerHTML = name;
     }
 
-    if (filesInput) {
-        filesInput.addEventListener('change', handleFileSelectChange, false);
+    function handleFileAdd(evt) {
+        var accept = evt.currentTarget.dataset.fileAccept;
+        var id = evt.currentTarget.dataset.fileId;
+        evt.currentTarget.dataset.fileId++;
+
+
+        var newLiFile = document.createElement('li');
+        newLiFile.setAttribute('id', 'file-li-' + id);
+        newLiFile.innerHTML =
+            '<a>' +
+                '<label for="file-id-' + id + '">' +
+                    '<span class="fa-minus"></span>&nbsp;' +
+                    '<span id="file-name-' + id + '"></span>' +
+                '</label>' +
+                '<input id="file-id-' + id + '" class="hidden" accept="' + accept + '" name="images[]" type="file">' +
+            '</a>';
+
+        // добавляем только что созданый элемент в дерево DOM
+        var dropdown = document.getElementById("dropdown-file-list");
+        var divider = document.getElementById("divider-file-list");
+        dropdown.insertBefore(newLiFile, divider);
+
+        // Вешаем событие
+        newLiFile.querySelector('#file-id-' + id).addEventListener('change', handleGetFileName, false);
+        newLiFile.querySelector('#file-id-' + id).click();
+        newLiFile.addEventListener('click', handleDeleteLi, false);
     }
-    if (filesButton) {
-        filesButton.addEventListener('click', handleFileSelectOpen, false);
+
+    if (fileAddButton) {
+        fileAddButton.addEventListener('click', handleFileAdd, false);
     }
-    
+/** ***************************************************************************************************************** */
     function getSwiperHeight(object, attr) {
         var val = object.attr("data-" + attr),
             dim;

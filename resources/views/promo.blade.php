@@ -91,15 +91,17 @@
                             <label for="adres" class="form-label">Адресс доставки</label>
                             <input id="adres" type="text" name="adres" class="form-control">
                         </div>
-                        <div class="form-group fileContainer">
+                        <div class="form-group dropup">
                             <span class="form-icon fa-files-o"></span>
-                            <label for="images" class="form-label" id="filesButton">Прикрепить файлы</label>
-                            {{ Form::file('images[]', [
-                                'multiple' => true, 
-                                'style' => 'opacity: 0;', 
-                                'class' => 'form-control',
-                                'accept' => $extention
-                            ]) }}
+                            <label for="images" class="form-label ">Прикрепить файлы</label>
+                            <p class="form-control dropdown-toggle" id="dropdown-file-menu"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></p>
+                            <ul class="dropdown-menu" id="dropdown-file-list" aria-labelledby="dropdown-file-menu">
+                                <li class="divider" id="divider-file-list"></li>
+                                <li id="file-add-button" data-file-accept="{{ $extention }}" data-file-id="1">
+                                    <a href="#"><span class="fa-plus"></span>&nbsp;Добавить файл</a>
+                                </li>
+                            </ul>
                         </div>
                         <button type="submit" class="btn btn-block">Отправить заказ</button>
                     {{ Form::close() }}
