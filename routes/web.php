@@ -18,7 +18,7 @@
 
 Auth::routes();
 Route::get('/', 'PromoController@index');
-Route::post('promo/order', 'PromoController@order');
+Route::post('/', 'PromoController@index');
 
 
 

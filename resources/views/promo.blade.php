@@ -26,6 +26,11 @@
 <body>
 <!-- Page-->
 <div class="page text-center">
+    <pre id="pretest">
+        qwe
+        qwe
+        ert
+    </pre>
     <!-- Page Header-->
     <header class="page-header">
         <div class="navigation">
@@ -62,7 +67,7 @@
                 </div>
                 <div class="offset-top-0 cell-sm-8 cell-md-5 cell-lg-4 section-top-34 section-bottom-60">
                     {{ Form::open([
-                        'url' => 'promo/order',
+                        'url' => '/',
                         //'action' => 'PromoController@mail',
                         'method' => 'post',
                         'files' => true,
@@ -71,11 +76,11 @@
                         <div class="form-group rd-calendar">
                             <span class="form-icon fa-calendar"></span>
                             <label for="date" class="form-label">Выберете дату</label>
-                            <input id="date" data-time-picker="date" type="text" name="date" class="form-control">
+                            <input id="date" data-time-picker="date" type="text" name="date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <span class="form-icon fa-clock-o"></span>
-                            <select id="Доставка с " name="time" class="form-control" required>
+                            <select name="time" class="form-control" required>
                                 <option selected value="{{ $time_gap1 }}">Доставка с {{ $time_gap1 }}</option>
                                 <option value="{{ $time_gap2 }}">Доставка с {{ $time_gap2 }}</option>
                                 <option value="{{ $time_gap3 }}">Доставка с {{ $time_gap3 }}</option>
@@ -84,13 +89,25 @@
                         <div class="form-group">
                             <span class="form-icon fa-phone"></span>
                             <label for="phone" class="form-label">Телефон</label>
-                            <input id="phone" type="text" name="phone" class="form-control">
+                            <input id="phone" type="text" name="phone" class="form-control" required pattern="\+*[0-9]{6,15}">
                         </div>
                         <div class="form-group">
                             <span class="form-icon fa-map-marker"></span>
                             <label for="adres" class="form-label">Адресс доставки</label>
-                            <input id="adres" type="text" name="adres" class="form-control">
+                            <input id="adres" type="text" name="adres" class="form-control" required>
                         </div>
+                    {{--Окно выбора для всех платформ--}}
+                        <div class="form-group fileContainer">
+                            <span class="form-icon fa-files-o"></span>
+                            <label for="images" class="form-label" id="filesButton">Прикрепить файлы</label>
+                            {{ Form::file('images[]', [
+                                'multiple' => true,
+                                'style' => 'opacity: 0;',
+                                'class' => 'form-control',
+                                'accept' => $extention
+                            ]) }}
+                        </div>
+                    {{--Окно выбора для Android--}}
                         <div class="form-group dropup">
                             <span class="form-icon fa-files-o"></span>
                             <label for="images" class="form-label ">Прикрепить файлы</label>
@@ -521,8 +538,61 @@
         } catch (f) {}
     }(document)
 </script>-->
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#result-modal">
+    Launch demo modal
+</button>
+
+@if ($result === true)
+    <!-- Modal result True-->
+    <div class="modal fade shell" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="result-modal-label">Заявка принята</h4>
+                </div>
+                <div class="modal-body text-center">
+                    Скоро с вами свяжутся наши менеджеры!
+                </div>
+            </div>
+        </div>
+    </div>
+@elseif ($result === false)
+    <!-- Modal result False-->
+    <div class="modal fade shell" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="result-modal-label">Возникли проблемы</h4>
+                </div>
+                <div class="modal-body text-center">
+                    Возникли проблемы при отправке заявки. Попробуйте позже, либо свяжитесь с нами по телефону {{ $phone }}
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
+
+
+
+
+
 <script src="promo/js/core.min.js"></script>
 <script src="promo/js/script.js"></script>
+
+@if ($result !== null)
+    <script>
+//        console.log("Поехали");
+//        var modal = document.querySelector('#result-modal');
+//        modal.style.display = 'block';
+//        $document.ready(function() {
+//            $('#resultModal').modal('result-modal');
+//        });
+    </script>
+@endif
+
 <!-- <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-7078796-5']);

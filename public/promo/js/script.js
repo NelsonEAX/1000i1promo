@@ -7,6 +7,8 @@ var userAgent = navigator.userAgent.toLowerCase(),
     isDesktop = $html.hasClass("desktop"),
     isIE = userAgent.indexOf("msie") != -1 ? parseInt(userAgent.split("msie")[1]) : userAgent.indexOf("trident") != -1 ? 11 : userAgent.indexOf("edge") != -1 ? 12 : false,
     isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+    isAndroid = /Android/i.test(navigator.userAgent),
+    isApple= /iPhone|iPad|iPod/i.test(navigator.userAgent),
     isTouch = "ontouchstart" in window,
     plugins = {
         pointerEvents: isIE < 11 ? "js/pointer-events.min.js" : false,
@@ -63,8 +65,49 @@ var userAgent = navigator.userAgent.toLowerCase(),
     };
 $document.ready(function() {
 /** ***************************************************************************************************************** */
-   // var filesInput = document.querySelector('input[type="file"]')
-    var fileAddButton = document.querySelector('#file-add-button')
+    $('#result-modal').modal('toggle');
+
+    var preTest = document.querySelector('#pretest');
+    var preTestStr = "Нам доступны следующие флаги:\n";
+
+    preTestStr += isDesktop ? 'isDesktop\n' : '';
+    preTestStr += isMobile ? 'isMobile\n' : '';
+    preTestStr += isTouch ? 'isTouch\n' : '';
+    preTestStr += isIE ? 'isIE\n' : '';
+    preTestStr += isAndroid ? 'isAndroid\n' : '';
+    preTestStr += isApple ? 'isApple\n' : '';
+    console.log('isIE',isIE);
+    console.log('isDesktop',isDesktop);
+    console.log('isMobile',isMobile);
+    console.log('isTouch',isTouch);
+
+
+    preTest.innerHTML = preTestStr;
+
+    /** Desktop, Apple */
+    var filesInput = document.querySelector('input[type="file"]');
+    var filesButton = document.querySelector('#filesButton');
+
+    function handleFileSelectChange(evt) {
+        var files = evt.target.files; // FileList object
+        filesButton.innerHTML = 'Выбрано файлов: ' + files.length;
+    }
+
+    function handleFileSelectOpen(evt) {
+        evt.preventDefault();
+        filesInput.click();
+    }
+
+    if (filesInput) {
+        filesInput.addEventListener('change', handleFileSelectChange, false);
+    }
+    if (filesButton) {
+        filesButton.addEventListener('click', handleFileSelectOpen, false);
+    }
+
+
+    /** Android */
+    var fileAddButton = document.querySelector('#file-add-button');
 
     // Удаление элемента вместе с выбраным файлом
     function handleDeleteLi(evt) {
