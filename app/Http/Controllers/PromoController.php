@@ -66,12 +66,12 @@ class PromoController extends Controller
                 $order->save();
 
                 $images = $request->file('images');
-                foreach ($images as $image) {
+                foreach ($images as $key => $image) {
                     //echo $image->getClientOriginalName()."<br>\n";
 
                     $storage = new Storage;
                     $storage->order = $order->id;
-                    $storage->name = $image->getClientOriginalName();
+                    $storage->name = $key.'_'.$image->getClientOriginalName();
                     $storage->ext = $image->getClientOriginalExtension();
                     $storage->uuid = \Uuid::generate()->string;
                     $storage->save();

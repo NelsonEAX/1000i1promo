@@ -96,21 +96,9 @@
                             <label for="adres" class="form-label">Адресс доставки</label>
                             <input id="adres" type="text" name="adres" class="form-control" required>
                         </div>
-                    {{--Окно выбора для всех платформ--}}
-                        <div class="form-group fileContainer">
-                            <span class="form-icon fa-files-o"></span>
-                            <label for="images" class="form-label" id="filesButton">Прикрепить файлы</label>
-                            {{ Form::file('images[]', [
-                                'multiple' => true,
-                                'style' => 'opacity: 0;',
-                                'class' => 'form-control',
-                                'accept' => $extention
-                            ]) }}
-                        </div>
-                    {{--Окно выбора для Android--}}
-                        <div class="form-group dropup">
-                            <span class="form-icon fa-files-o"></span>
-                            <label for="images" class="form-label ">Прикрепить файлы</label>
+                        <div class="form-group dropup" id="dropdown-file-div">
+                            <span class="form-icon fa-files-o" id="dropdown-file-icon"></span>
+                            <label for="images" class="form-label " id="dropdown-file-label">Прикрепить файлы</label>
                             <p class="form-control dropdown-toggle" id="dropdown-file-menu"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></p>
                             <ul class="dropdown-menu" id="dropdown-file-list" aria-labelledby="dropdown-file-menu">

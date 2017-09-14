@@ -84,28 +84,6 @@ $document.ready(function() {
 
     preTest.innerHTML = preTestStr;
 
-    /** Desktop, Apple */
-    var filesInput = document.querySelector('input[type="file"]');
-    var filesButton = document.querySelector('#filesButton');
-
-    function handleFileSelectChange(evt) {
-        var files = evt.target.files; // FileList object
-        filesButton.innerHTML = 'Выбрано файлов: ' + files.length;
-    }
-
-    function handleFileSelectOpen(evt) {
-        evt.preventDefault();
-        filesInput.click();
-    }
-
-    if (filesInput) {
-        filesInput.addEventListener('change', handleFileSelectChange, false);
-    }
-    if (filesButton) {
-        filesButton.addEventListener('click', handleFileSelectOpen, false);
-    }
-
-
     /** Android */
     var fileAddButton = document.querySelector('#file-add-button');
 
@@ -127,21 +105,26 @@ $document.ready(function() {
     }
 
     function handleFileAdd(evt) {
+        var preTest = document.querySelector('#pretest');
+        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 001\n';
         var accept = evt.currentTarget.dataset.fileAccept;
         var id = evt.currentTarget.dataset.fileId;
         evt.currentTarget.dataset.fileId++;
 
+        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 002\n';
 
         var newLiFile = document.createElement('li');
         newLiFile.setAttribute('id', 'file-li-' + id);
         newLiFile.innerHTML =
             '<a>' +
                 '<label for="file-id-' + id + '">' +
-                    '<span class="fa-minus"></span>&nbsp;' +
+                    '<span class="fa-times text-danger"></span>&nbsp;' +
                     '<span id="file-name-' + id + '"></span>' +
                 '</label>' +
                 '<input id="file-id-' + id + '" class="hidden" accept="' + accept + '" name="images[]" type="file">' +
             '</a>';
+
+        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 003\n';
 
         // добавляем только что созданый элемент в дерево DOM
         var dropdown = document.getElementById("dropdown-file-list");
@@ -154,9 +137,18 @@ $document.ready(function() {
         newLiFile.addEventListener('click', handleDeleteLi, false);
     }
 
+    preTest.innerHTML = preTest.innerHTML + 'debug 001\n';
+
     if (fileAddButton) {
+        preTest.innerHTML = preTest.innerHTML + 'debug 002\n';
         fileAddButton.addEventListener('click', handleFileAdd, false);
+        preTest.innerHTML = preTest.innerHTML + 'debug 003\n';
     }
+    preTest.innerHTML = preTest.innerHTML + 'debug 004\n';
+
+    var click1 = document.querySelector('#dropdown-file-div');
+    click1.addEventListener('click', function () {}, false);
+    preTest.innerHTML = preTest.innerHTML + 'debug 005\n';
 /** ***************************************************************************************************************** */
     function getSwiperHeight(object, attr) {
         var val = object.attr("data-" + attr),
