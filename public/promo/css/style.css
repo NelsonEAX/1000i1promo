@@ -28223,3 +28223,8 @@ input:-webkit-autofill {
   margin: 0;
   width: inherit;
 }
+
+.navigation-logo{
+  font-size: 18px;
+  color: #fff;
+}

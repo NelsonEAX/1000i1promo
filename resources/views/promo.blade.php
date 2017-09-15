@@ -26,17 +26,13 @@
 <body>
 <!-- Page-->
 <div class="page text-center">
-    <pre id="pretest">
-        qwe
-        qwe
-        ert
-    </pre>
+    <pre id="pretest"></pre>
     <!-- Page Header-->
     <header class="page-header">
         <div class="navigation">
             <div class="navigation-inner">
-                <a href="default.htm" class="navigation-logo">
-                    <img src="promo/images/logo.png" width="124" height="28" alt="">
+                <a class="navigation-logo">
+                    1000и1.рф
                 </a>
             </div>
             <div class="navigation-contacts">
@@ -81,7 +77,8 @@
                         <div class="form-group">
                             <span class="form-icon fa-clock-o"></span>
                             <select name="time" class="form-control" required>
-                                <option selected value="{{ $time_gap1 }}">Доставка с {{ $time_gap1 }}</option>
+                                <option value="" selected disabled hidden>Выберете время доставки</option>
+                                <option value="{{ $time_gap1 }}">Доставка с {{ $time_gap1 }}</option>
                                 <option value="{{ $time_gap2 }}">Доставка с {{ $time_gap2 }}</option>
                                 <option value="{{ $time_gap3 }}">Доставка с {{ $time_gap3 }}</option>
                             </select>
@@ -89,7 +86,7 @@
                         <div class="form-group">
                             <span class="form-icon fa-phone"></span>
                             <label for="phone" class="form-label">Телефон</label>
-                            <input id="phone" type="text" name="phone" class="form-control" required pattern="\+*[0-9]{6,15}">
+                            <input id="phone" type="tel" name="phone" class="form-control" required pattern="\+*[0-9]{6,15}">
                         </div>
                         <div class="form-group">
                             <span class="form-icon fa-map-marker"></span>
@@ -104,7 +101,7 @@
                             <ul class="dropdown-menu" id="dropdown-file-list" aria-labelledby="dropdown-file-menu">
                                 <li class="divider" id="divider-file-list"></li>
                                 <li id="file-add-button" data-file-accept="{{ $extention }}" data-file-id="1">
-                                    <a href="#"><span class="fa-plus"></span>&nbsp;Добавить файл</a>
+                                    <a><span class="fa-plus"></span>&nbsp;Добавить файл</a>
                                 </li>
                             </ul>
                         </div>
@@ -124,7 +121,7 @@
                         <div class="counter-divider">
                             <!-- CountTo-->
                             <div class="counter-title">Уже более</div>
-                            <div data-from="0" data-to="6" class="counter"></div>
+                            <div data-from="0" data-to="7" class="counter"></div>
                             <div class="counter-title">лет Мы производим для Вас потолки</div>
                         </div>
                     </div>
@@ -164,6 +161,32 @@
                 <a href="promo/uploads/price.xlsx" class="btn btn-white offset-top-30 btn-sm">Скачать</a>
             </div>
         </section>
+        <section class="section-90">
+            <div class="shell">
+                <h2>АКЦИЯ!</h2>
+                <div class="range range-md-middle range-xs-center">
+                    <div class="cell-md-4 cell-sm-8 cell-md-push-1">
+                        <div class="pricing-box pricing-box-danger">
+                            <div class="pricing-box-title">Криволинейная спайка швов</div>
+                            <div class="pricing-box-panel">
+                                <div class="pricing-box-price">
+                                    <span class="pricing-box-price-counter">489</span>
+                                    <span class="pricing-box-price-sub">р</span>
+                                    <span class="pricing-box-price-sup">/ пог. м.</span>
+                                </div>
+                            </div>
+                            <div class="pricing-box-body">
+                                <ul class="list-marked">
+                                    <li>При первом заказе,</li>
+                                    <li>один метр криволинейной спайки</li>
+                                    <li>в подарок!</li>
+                                </ul>
+                                <a class="btn-block btn btn-default">Заказать</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
         {{--<section class="section-90">--}}
             {{--<div class="shell">--}}
                 {{--<h2>Дополнительные работы</h2>--}}
@@ -185,7 +208,7 @@
                                     {{--<li>3 выгода</li>--}}
                                     {{--<li>4 выгода</li>--}}
                                     {{--<li>5 выгода</li>--}}
-                                {{--</ul><a href="#" class="btn-block btn btn-default">Заказать</a>--}}
+                                {{--</ul><a class="btn-block btn btn-default">Заказать</a>--}}
                             {{--</div>--}}
                         {{--</div>--}}
                     {{--</div>--}}
@@ -204,7 +227,7 @@
                                     {{--<li>1 выгода</li>--}}
                                     {{--<li>2 выгода</li>--}}
                                     {{--<li>3 выгода</li>--}}
-                                {{--</ul><a href="#" class="btn-block btn btn-default">Заказать</a>--}}
+                                {{--</ul><a class="btn-block btn btn-default">Заказать</a>--}}
                             {{--</div>--}}
                         {{--</div>--}}
                     {{--</div>--}}
@@ -223,12 +246,68 @@
                                     {{--<li>1 выгода</li>--}}
                                     {{--<li>2 выгода</li>--}}
                                     {{--<li>3 выгода</li>--}}
-                                {{--</ul><a href="#" class="btn-block btn btn-default">Заказать</a>--}}
+                                {{--</ul><a class="btn-block btn btn-default">Заказать</a>--}}
                             {{--</div>--}}
                         {{--</div>--}}
                     {{--</div>--}}
                 {{--</div>--}}
                 {{--<a href="promo/uploads/price.xlsx" class="btn btn-default offset-top-30 btn-sm">Скачать прайс на комплектующие</a>--}}
+            {{--</div>--}}
+        {{--</section>--}}
+        {{--<section class="section-90 bg-warning context-dark">--}}
+            {{--<div class="shell">--}}
+                {{--<h2>Фото наших работ:</h2>--}}
+                {{--<!-- PhotoSwipe-->--}}
+                {{--<div data-photo-swipe-gallery="gallery" class="range">--}}
+                    {{--<div class="cell-sm-6 cell-md-4">--}}
+                        {{--<a data-photo-swipe-item="" data-size="1000x667" href="promo/images/index-02_original.jpg" data-author="Michael Hull" class="thumbnail">--}}
+                            {{--<img width="351" height="220" src="promo/images/index-02.jpg" alt="">--}}
+                            {{--<div class="caption">--}}
+                                {{--<div class="caption-overlay"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                    {{--<div class="cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0">--}}
+                        {{--<a data-photo-swipe-item="" data-size="1000x667" href="promo/images/index-03_original.jpg" class="thumbnail">--}}
+                            {{--<img width="351" height="220" src="promo/images/index-03.jpg" alt="">--}}
+                            {{--<div class="caption">--}}
+                                {{--<div class="caption-overlay"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                    {{--<div class="cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0">--}}
+                        {{--<a data-photo-swipe-item="" data-size="1000x669" href="promo/images/index-04_original.jpg" class="thumbnail">--}}
+                            {{--<img width="351" height="220" src="promo/images/index-04.jpg" alt="">--}}
+                            {{--<div class="caption">--}}
+                                {{--<div class="caption-overlay"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                    {{--<div class="cell-sm-6 cell-md-4 offset-top-30">--}}
+                        {{--<a data-photo-swipe-item="" data-size="1000x664" href="promo/images/index-05_original.jpg" data-author="Michael Hull" class="thumbnail">--}}
+                            {{--<img width="351" height="220" src="promo/images/index-05.jpg" alt="">--}}
+                            {{--<div class="caption">--}}
+                                {{--<div class="caption-overlay"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                    {{--<div class="cell-sm-6 cell-md-4 offset-top-30">--}}
+                        {{--<a data-photo-swipe-item="" data-size="1000x656" href="promo/images/index-06_original.jpg" class="thumbnail">--}}
+                            {{--<img width="351" height="220" src="promo/images/index-06.jpg" alt="">--}}
+                            {{--<div class="caption">--}}
+                                {{--<div class="caption-overlay"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                    {{--<div class="cell-sm-6 cell-md-4 offset-top-30">--}}
+                        {{--<a data-photo-swipe-item="" data-size="750x1000" href="promo/images/index-07_original.jpg" class="thumbnail">--}}
+                            {{--<img width="351" height="220" src="promo/images/index-07.jpg" alt="">--}}
+                            {{--<div class="caption">--}}
+                                {{--<div class="caption-overlay"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             {{--</div>--}}
         {{--</section>--}}
         <section class="section-90 bg-warning context-dark">
@@ -276,7 +355,8 @@
                             </div>
                         </a>
                     </div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30"><a data-photo-swipe-item="" data-size="750x1000" href="promo/images/index-07_original.jpg" class="thumbnail">
+                    <div class="cell-sm-6 cell-md-4 offset-top-30">
+                        <a data-photo-swipe-item="" data-size="750x1000" href="promo/images/index-07_original.jpg" class="thumbnail">
                             <img width="351" height="220" src="promo/images/index-07.jpg" alt="">
                             <div class="caption">
                                 <div class="caption-overlay"></div>
@@ -294,7 +374,7 @@
                      data-loop="false" data-margin="30" data-mouse-drag="false" class="offset-top-55 owl-carousel owl-carousel-dots-dark"
                      data-dots-each="2">
                     <div class="item">
-                        <h6><a href="#" class="text-base">Шаг 1</a></h6>
+                        <h6><a class="text-base">Шаг 1</a></h6>
                         <p class="text-gray">
                             <span class="text-danger">Вы</span>
                             отправляете свой заказ
@@ -305,7 +385,7 @@
                         <p class="text-gray">Форма заказа на нашем сайте</p>
                     </div>
                     <div class="item">
-                        <h6><a href="#" class="text-base">Шаг 2</a></h6>
+                        <h6><a class="text-base">Шаг 2</a></h6>
                         <p class="text-gray">
                             <span class="text-danger">Мы</span>
                             строим потолки в программе, Отправляем чертежи на согласование
@@ -313,7 +393,7 @@
                         <p class="text-gray">Выставляем общий счет</p>
                     </div>
                     <div class="item">
-                        <h6><a href="#" class="text-base">Шаг 3</a></h6>
+                        <h6><a class="text-base">Шаг 3</a></h6>
                         <p class="text-gray">
                             <span class="text-danger">Вы</span>
                             проверяетет чертежи и счет и если всё верно оплачиваете
@@ -321,7 +401,7 @@
                         </p>
                     </div>
                     <div class="item">
-                        <h6><a href="#" class="text-base">Шаг 4</a></h6>
+                        <h6><a class="text-base">Шаг 4</a></h6>
                         <p class="text-gray">
                             <span class="text-danger">Мы</span>
                             получив оплату, ставим ваш заказ
@@ -331,7 +411,7 @@
                         </p>
                     </div>
                     <div class="item">
-                        <h6><a href="#" class="text-base">Шаг 5</a></h6>
+                        <h6><a class="text-base">Шаг 5</a></h6>
                         <p class="text-gray">
                             <span class="text-danger">Вы</span>
                             просыпаетесь, делаете спокойно все свои домашние дела
@@ -350,44 +430,44 @@
                     <!-- Owl Carousel-->
                     <div data-dots="true" data-items="1" data-xs-items="2" data-sm-items="3" data-lg-items="4" data-loop="true" data-margin="30" data-mouse-drag="false" class="owl-carousel">
                         <div class="thumbnail-variant-1">
-                            <a href="#" class="reveal-inline-block">
-                                <img src="promo/images/index-11.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                            <a class="reveal-inline-block">
+                                <img src="promo/images/price-01.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
                             </a>
                             <div class="caption">
-                                <h6 class="text-sbold"><a href="#" class="text-white">Beer</a></h6>
-                                <p class="text-warning text-sbold big">$8,99</p>
+                                <h6 class="text-sbold"><a class="text-white">Багет перфорированный</a></h6>
+                                <p class="text-warning text-sbold big">13,8р</p>
                             </div>
                         </div>
                         <div class="thumbnail-variant-1">
-                            <a href="#" class="reveal-inline-block">
-                                <img src="promo/images/index-12.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                            <a class="reveal-inline-block">
+                                <img src="promo/images/price-02.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
                             </a>
                             <div class="caption">
-                                <h6 class="text-sbold"><a href="#" class="text-white">Ice cream</a></h6>
-                                <p class="text-warning text-sbold big">$1,99</p>
+                                <h6 class="text-sbold"><a class="text-white">Вставка белая TL "Готика"</a></h6>
+                                <p class="text-warning text-sbold big">8,9р</p>
                             </div>
                         </div>
                         <div class="thumbnail-variant-1">
-                            <a href="#" class="reveal-inline-block">
-                                <img src="promo/images/index-13.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                            <a class="reveal-inline-block">
+                                <img src="promo/images/price-03.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
                             </a>
                             <div class="caption">
-                                <h6 class="text-sbold"><a href="#" class="text-white">Burger</a></h6>
-                                <p class="text-warning text-sbold big">$5,99</p>
+                                <h6 class="text-sbold"><a class="text-white">Комплект GX-53+лампа 4.2вт</a></h6>
+                                <p class="text-warning text-sbold big">178р</p>
                             </div>
                         </div>
                         <div class="thumbnail-variant-1">
-                            <a href="#" class="reveal-inline-block">
-                                <img src="promo/images/index-15.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                            <a class="reveal-inline-block">
+                                <img src="promo/images/price-04.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
                             </a>
                             <div class="caption">
-                                <h6 class="text-sbold"><a href="#" class="text-white">Cocktail</a></h6>
-                                <p class="text-warning text-sbold big">$12,99</p>
+                                <h6 class="text-sbold"><a class="text-white">Клей "Контакт" 3гр</a></h6>
+                                <p class="text-warning text-sbold big">29р</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a href="#" class="btn btn-white offset-top-30 btn-sm">Посмотреть все</a>
+                {{--<a class="btn btn-white offset-top-30 btn-sm">Посмотреть все</a>--}}
             </div>
         </section>
         <section class="section-90">
@@ -437,7 +517,7 @@
                 <div class="cell-md-3 cell-sm-6 offset-top-30 offset-sm-top-0">
                     <div class="footer-divider"><span class="icon icon-lg text-warning fa-map-marker"></span>
                         <p class="text-uppercase text-success footer-heading">Адрес:</p>
-                        <p><a href="#">г. Верхняя Пышма,<br class="veil reveal-sm-block"> ул. Феофанова 25б</a></p>
+                        <p><a>г. Верхняя Пышма,<br class="veil reveal-sm-block"> ул. Феофанова 25б</a></p>
                     </div>
                 </div>
                 <div class="cell-md-3 cell-sm-6 offset-top-30 offset-md-top-0">
@@ -457,9 +537,9 @@
             <div class="range offset-top-0">
                 <div class="cell-sm-5 text-sm-right cell-sm-push-1">
                     <!--<ul class="list-inline">
-                      <li><a href="#" class="icon icon-circle fa-facebook"></a></li>
-                      <li><a href="#" class="icon icon-circle fa-twitter"></a></li>
-                      <li><a href="#" class="icon icon-circle fa-instagram"></a></li>
+                      <li><a class="icon icon-circle fa-facebook"></a></li>
+                      <li><a class="icon icon-circle fa-twitter"></a></li>
+                      <li><a class="icon icon-circle fa-instagram"></a></li>
                     </ul>-->
                 </div>
                 <div class="cell-sm-7 text-sm-left offset-top-10 offset-sm-top-0">
@@ -509,27 +589,23 @@
         </div>
     </div>
 </div>
-<!-- Java script-->
-<!-- <script>
-    ! function(e, t, r, a, n, c, l, o) {
-        function h(e, t, r, a) {
-            for (r = '', a = '0x' + e.substr(t, 2) | 0, t += 2; t < e.length; t += 2) r += String.fromCharCode('0x' + e.substr(t, 2) ^ a);
-            return r
-        }
-        try {
-            for (n = e.getElementsByTagName('a'), l = '/cdn-cgi/l/email-protection#', o = l.length, a = 0; a < n.length; a++) try {
-                c = n[a], t = c.href.indexOf(l), t > -1 && (c.href = 'mailto:' + h(c.href, t + o))
-            } catch (f) {}
-            for (n = Array.prototype.slice.apply(e.getElementsByClassName('__cf_email__')), a = 0; a < n.length; a++) try {
-                c = n[a], c.parentNode.replaceChild(e.createTextNode(h(c.getAttribute('data-cfemail'), 0)), c)
-            } catch (f) {}
-        } catch (f) {}
-    }(document)
-</script>-->
-
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#result-modal">
-    Launch demo modal
-</button>
+{{--<!-- Java script-->--}}
+{{--<!-- <script>--}}
+    {{--! function(e, t, r, a, n, c, l, o) {--}}
+        {{--function h(e, t, r, a) {--}}
+            {{--for (r = '', a = '0x' + e.substr(t, 2) | 0, t += 2; t < e.length; t += 2) r += String.fromCharCode('0x' + e.substr(t, 2) ^ a);--}}
+            {{--return r--}}
+        {{--}--}}
+        {{--try {--}}
+            {{--for (n = e.getElementsByTagName('a'), l = '/cdn-cgi/l/email-protection#', o = l.length, a = 0; a < n.length; a++) try {--}}
+                {{--c = n[a], t = c.href.indexOf(l), t > -1 && (c.href = 'mailto:' + h(c.href, t + o))--}}
+            {{--} catch (f) {}--}}
+            {{--for (n = Array.prototype.slice.apply(e.getElementsByClassName('__cf_email__')), a = 0; a < n.length; a++) try {--}}
+                {{--c = n[a], c.parentNode.replaceChild(e.createTextNode(h(c.getAttribute('data-cfemail'), 0)), c)--}}
+            {{--} catch (f) {}--}}
+        {{--} catch (f) {}--}}
+    {{--}(document)--}}
+{{--</script>-->--}}
 
 @if ($result === true)
     <!-- Modal result True-->
@@ -570,49 +646,39 @@
 <script src="promo/js/core.min.js"></script>
 <script src="promo/js/script.js"></script>
 
-@if ($result !== null)
-    <script>
-//        console.log("Поехали");
-//        var modal = document.querySelector('#result-modal');
-//        modal.style.display = 'block';
-//        $document.ready(function() {
-//            $('#resultModal').modal('result-modal');
-//        });
-    </script>
-@endif
 
-<!-- <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-7078796-5']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-</script>-->
+{{--<!-- <script type="text/javascript">--}}
+    {{--var _gaq = _gaq || [];--}}
+    {{--_gaq.push(['_setAccount', 'UA-7078796-5']);--}}
+    {{--_gaq.push(['_trackPageview']);--}}
+    {{--(function() {--}}
+        {{--var ga = document.createElement('script');--}}
+        {{--ga.type = 'text/javascript';--}}
+        {{--ga.async = true;--}}
+        {{--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';--}}
+        {{--var s = document.getElementsByTagName('script')[0];--}}
+        {{--s.parentNode.insertBefore(ga, s);--}}
+    {{--})();--}}
+{{--</script>-->--}}
 </body>
-<!-- Google Tag Manager -->
-<!-- <noscript>
-  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>-->
-<!-- <script>
-    (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');
-</script>-->
-<!-- End Google Tag Manager -->
+{{--<!-- Google Tag Manager -->--}}
+{{--<!-- <noscript>--}}
+  {{--<iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe>--}}
+{{--</noscript>-->--}}
+{{--<!-- <script>--}}
+    {{--(function(w, d, s, l, i) {--}}
+        {{--w[l] = w[l] || [];--}}
+        {{--w[l].push({--}}
+            {{--'gtm.start': new Date().getTime(),--}}
+            {{--event: 'gtm.js'--}}
+        {{--});--}}
+        {{--var f = d.getElementsByTagName(s)[0],--}}
+            {{--j = d.createElement(s),--}}
+            {{--dl = l != 'dataLayer' ? '&l=' + l : '';--}}
+        {{--j.async = true;--}}
+        {{--j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;--}}
+        {{--f.parentNode.insertBefore(j, f);--}}
+    {{--})(window, document, 'script', 'dataLayer', 'GTM-P9FT69');--}}
+{{--</script>-->--}}
+{{--<!-- End Google Tag Manager -->--}}
 </html>

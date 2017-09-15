@@ -65,8 +65,11 @@ var userAgent = navigator.userAgent.toLowerCase(),
     };
 $document.ready(function() {
 /** ***************************************************************************************************************** */
+
+    /** MODAL */
     $('#result-modal').modal('toggle');
 
+    /** DEBUG. TODO: удалить на рабочем */
     var preTest = document.querySelector('#pretest');
     var preTestStr = "Нам доступны следующие флаги:\n";
 
@@ -80,11 +83,9 @@ $document.ready(function() {
     console.log('isDesktop',isDesktop);
     console.log('isMobile',isMobile);
     console.log('isTouch',isTouch);
-
-
     preTest.innerHTML = preTestStr;
 
-    /** Android */
+    /** ЗАГРУЗКА. Формируем элементы загрузки файлов */
     var fileAddButton = document.querySelector('#file-add-button');
 
     // Удаление элемента вместе с выбраным файлом
@@ -104,14 +105,15 @@ $document.ready(function() {
         label.innerHTML = name;
     }
 
+    //Добавляем input file
     function handleFileAdd(evt) {
-        var preTest = document.querySelector('#pretest');
-        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 001\n';
+        var preTest = document.querySelector('#pretest'); /** TODO: удалить на рабочем */
+        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 001\n'; /** TODO: удалить на рабочем */
         var accept = evt.currentTarget.dataset.fileAccept;
         var id = evt.currentTarget.dataset.fileId;
         evt.currentTarget.dataset.fileId++;
 
-        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 002\n';
+        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 002\n'; /** TODO: удалить на рабочем */
 
         var newLiFile = document.createElement('li');
         newLiFile.setAttribute('id', 'file-li-' + id);
@@ -124,7 +126,7 @@ $document.ready(function() {
                 '<input id="file-id-' + id + '" class="hidden" accept="' + accept + '" name="images[]" type="file">' +
             '</a>';
 
-        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 003\n';
+        preTest.innerHTML = preTest.innerHTML + 'handleFileAdd debug 003\n'; /** TODO: удалить на рабочем */
 
         // добавляем только что созданый элемент в дерево DOM
         var dropdown = document.getElementById("dropdown-file-list");
@@ -137,18 +139,27 @@ $document.ready(function() {
         newLiFile.addEventListener('click', handleDeleteLi, false);
     }
 
-    preTest.innerHTML = preTest.innerHTML + 'debug 001\n';
+    preTest.innerHTML = preTest.innerHTML + 'debug 001\n'; /** TODO: удалить на рабочем */
 
     if (fileAddButton) {
-        preTest.innerHTML = preTest.innerHTML + 'debug 002\n';
+        preTest.innerHTML = preTest.innerHTML + 'debug 002\n'; /** TODO: удалить на рабочем */
         fileAddButton.addEventListener('click', handleFileAdd, false);
-        preTest.innerHTML = preTest.innerHTML + 'debug 003\n';
+        preTest.innerHTML = preTest.innerHTML + 'debug 003\n'; /** TODO: удалить на рабочем */
     }
-    preTest.innerHTML = preTest.innerHTML + 'debug 004\n';
+    preTest.innerHTML = preTest.innerHTML + 'debug 004\n'; /** TODO: удалить на рабочем */
 
     var click1 = document.querySelector('#dropdown-file-div');
     click1.addEventListener('click', function () {}, false);
-    preTest.innerHTML = preTest.innerHTML + 'debug 005\n';
+    preTest.innerHTML = preTest.innerHTML + 'debug 005\n'; /** TODO: удалить на рабочем */
+
+
+
+
+
+
+
+
+
 /** ***************************************************************************************************************** */
     function getSwiperHeight(object, attr) {
         var val = object.attr("data-" + attr),
