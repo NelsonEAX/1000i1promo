@@ -26,7 +26,7 @@
 <body>
 <!-- Page-->
 <div class="page text-center">
-    <pre id="pretest"></pre>
+    {{--<pre id="pretest"></pre>--}}
     <!-- Page Header-->
     <header class="page-header">
         <div class="navigation">
@@ -72,26 +72,29 @@
                         <div class="form-group rd-calendar">
                             <span class="form-icon fa-calendar"></span>
                             <label for="date" class="form-label">Выберете дату</label>
-                            <input id="date" data-time-picker="date" type="text" name="date" class="form-control" required>
+                            <input id="date" type="text" name="date" class="form-control"
+                                   value="{{ $request['date'] }}" required data-time-picker="date">
                         </div>
                         <div class="form-group">
                             <span class="form-icon fa-clock-o"></span>
                             <select name="time" class="form-control" required>
                                 <option value="" selected disabled hidden>Выберете время доставки</option>
-                                <option value="{{ $time_gap1 }}">Доставка с {{ $time_gap1 }}</option>
-                                <option value="{{ $time_gap2 }}">Доставка с {{ $time_gap2 }}</option>
-                                <option value="{{ $time_gap3 }}">Доставка с {{ $time_gap3 }}</option>
+                                <option value="{{ $time_gap1 }}"{{ $request['time1'] }}>Доставка с {{ $time_gap1 }}</option>
+                                <option value="{{ $time_gap2 }}"{{ $request['time2'] }}>Доставка с {{ $time_gap2 }}</option>
+                                <option value="{{ $time_gap3 }}"{{ $request['time3'] }}>Доставка с {{ $time_gap3 }}</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <span class="form-icon fa-phone"></span>
                             <label for="phone" class="form-label">Телефон</label>
-                            <input id="phone" type="tel" name="phone" class="form-control" required pattern="\+*[0-9]{6,15}">
+                            <input id="phone" type="tel" name="phone" class="form-control"
+                                   value="{{ $request['phone'] }}" required pattern="\+*[0-9]{6,15}">
                         </div>
                         <div class="form-group">
                             <span class="form-icon fa-map-marker"></span>
                             <label for="adres" class="form-label">Адресс доставки</label>
-                            <input id="adres" type="text" name="adres" class="form-control" required>
+                            <input id="adres" type="text" name="adres" class="form-control"
+                                   value="{{ $request['adres'] }}" required>
                         </div>
                         <div class="form-group dropup" id="dropdown-file-div">
                             <span class="form-icon fa-files-o" id="dropdown-file-icon"></span>
@@ -613,8 +616,10 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="result-modal-label">Заявка принята</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title text-success" id="result-modal-label">Заявка принята</h4>
                 </div>
                 <div class="modal-body text-center">
                     Скоро с вами свяжутся наши менеджеры!
@@ -624,16 +629,27 @@
     </div>
 @elseif ($result === false)
     <!-- Modal result False-->
-    <div class="modal fade shell" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal-label">
+    <div class=" modal modal-danger fade shell" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal-label">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="result-modal-label">Возникли проблемы</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title text-danger" id="result-modal-label">{{ $result_hdr }}</h4>
                 </div>
                 <div class="modal-body text-center">
-                    Возникли проблемы при отправке заявки. Попробуйте позже, либо свяжитесь с нами по телефону {{ $phone }}
+
+                    @if ($result_msg)
+                        {{ $result_msg }}
+                    @else
+                        Возникли проблемы при отправке заявки. Попробуйте позже, либо свяжитесь с нами по телефону {{ $phone }}
+                    @endif
+
                 </div>
+                {{--<div class="modal-footer">--}}
+                    {{--<button type="button" class="btn btn-default" data-dismiss="modal">Понял</button>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
