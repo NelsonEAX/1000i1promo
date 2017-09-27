@@ -59,7 +59,7 @@
                     </p>
                 </div>
                 <div class="cell-md-4 img-wrapper veil reveal-lg-block">
-                    <img src="promo/images/header-01.png" width="385" height="561" alt="" class="img-positioning">
+                    {{--<img src="promo/images/header-01.png" width="385" height="561" alt="" class="img-positioning">--}}
                 </div>
                 <div class="offset-top-0 cell-sm-8 cell-md-5 cell-lg-4 section-top-34 section-bottom-60">
                     {{ Form::open([
@@ -164,30 +164,26 @@
                 <a href="promo/uploads/price.xlsx" class="btn btn-white offset-top-30 btn-sm">Скачать</a>
             </div>
         </section>
-        <section class="section-90">
+        <section class="section-90 bg-warning">
             <div class="shell">
                 <h2>АКЦИЯ!</h2>
                 <div class="range range-md-middle range-xs-center">
                     <div class="cell-md-4 cell-sm-8 cell-md-push-1">
                         <div class="pricing-box pricing-box-danger">
-                            <div class="pricing-box-title">Криволинейная спайка швов</div>
+                            <div class="pricing-box-title">Бесплатная доставка!</div>
                             <div class="pricing-box-panel">
                                 <div class="pricing-box-price">
-                                    <span class="pricing-box-price-counter">489</span>
+                                    <span class="pricing-box-price-sub">от</span>
+                                    <span class="pricing-box-price-counter">5000</span>
                                     <span class="pricing-box-price-sub">р</span>
-                                    <span class="pricing-box-price-sup">/ пог. м.</span>
                                 </div>
                             </div>
                             <div class="pricing-box-body">
-                                <ul class="list-marked">
-                                    <li>При первом заказе,</li>
-                                    <li>один метр криволинейной спайки</li>
-                                    <li>в подарок!</li>
-                                </ul>
                                 <a class="btn-block btn btn-default">Заказать</a>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </section>
         {{--<section class="section-90">--}}
@@ -313,62 +309,6 @@
                 {{--</div>--}}
             {{--</div>--}}
         {{--</section>--}}
-        <section class="section-90 bg-warning context-dark">
-            <div class="shell">
-                <h2>Фото наших работ:</h2>
-                <!-- PhotoSwipe-->
-                <div data-photo-swipe-gallery="gallery" class="range">
-                    <div class="cell-sm-6 cell-md-4">
-                        <a data-photo-swipe-item="" data-size="1000x667" href="promo/images/index-02_original.jpg" data-author="Michael Hull" class="thumbnail">
-                            <img width="351" height="220" src="promo/images/index-02.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-overlay"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0">
-                        <a data-photo-swipe-item="" data-size="1000x667" href="promo/images/index-03_original.jpg" class="thumbnail">
-                            <img width="351" height="220" src="promo/images/index-03.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-overlay"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0">
-                        <a data-photo-swipe-item="" data-size="1000x669" href="promo/images/index-04_original.jpg" class="thumbnail">
-                            <img width="351" height="220" src="promo/images/index-04.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-overlay"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30">
-                        <a data-photo-swipe-item="" data-size="1000x664" href="promo/images/index-05_original.jpg" data-author="Michael Hull" class="thumbnail">
-                            <img width="351" height="220" src="promo/images/index-05.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-overlay"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30">
-                        <a data-photo-swipe-item="" data-size="1000x656" href="promo/images/index-06_original.jpg" class="thumbnail">
-                            <img width="351" height="220" src="promo/images/index-06.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-overlay"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-30">
-                        <a data-photo-swipe-item="" data-size="750x1000" href="promo/images/index-07_original.jpg" class="thumbnail">
-                            <img width="351" height="220" src="promo/images/index-07.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-overlay"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section class="section-90">
             <div class="shell">
                 <h2>Как мы работаем:</h2>
@@ -446,7 +386,7 @@
                                 <img src="promo/images/price-02.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
                             </a>
                             <div class="caption">
-                                <h6 class="text-sbold"><a class="text-white">Вставка белая TL "Готика"</a></h6>
+                                <h6 class="text-sbold"><a class="text-white">Вставка TL "Готика"</a></h6>
                                 <p class="text-warning text-sbold big">8,9р</p>
                             </div>
                         </div>
@@ -455,7 +395,7 @@
                                 <img src="promo/images/price-03.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
                             </a>
                             <div class="caption">
-                                <h6 class="text-sbold"><a class="text-white">Комплект GX-53+лампа 4.2вт</a></h6>
+                                <h6 class="text-sbold"><a class="text-white"> Комплект GX53 "Экола"</a></h6>
                                 <p class="text-warning text-sbold big">178р</p>
                             </div>
                         </div>
@@ -481,24 +421,24 @@
                         <!-- Owl Carousel-->
                         <div data-items="1" data-loop="true" data-dots="true" data-nav="true" data-mouse-drag="false" class="owl-carousel owl-carousel-dots-warning owl-navigation">
                             <blockquote class="quote"><img src="promo/images/index-16.jpg" width="134" height="134" alt="" class="img-responsive center-block img-circle">
-                                <h5 class="text-bold">Молодцы вообще ребята!</h5>
-                                <p>“Our evening at Billiard Club was wonderful as always! Our guests loved being able to mingle around, play pool and ping pong during the evening. The food was wonderful, the bar was amazing, and the service was outstanding! Everyone left very pleased and very impressed with their experience.”</p>
+                                <h5 class="text-bold">Очень удобный прайс!</h5>
+                                <p>“Если нужно срочно, быстро сделают и быстро привезут. С клиентами стараюсь договариваться на более позние сроки монтажа и почучается хорошая экономия!  Половина клиентов без проблем соглашается делать монтаж на следующей неделе. Особенно выгодно заказывать большие объёмы.”</p>
                                 <p class="big text-sbold">
-                                    <cite>Александр ошурков</cite>
+                                    <cite>Александр Ошурков</cite>
                                 </p>
                             </blockquote>
                             <blockquote class="quote"><img src="promo/images/index-16.jpg" width="134" height="134" alt="" class="img-responsive center-block img-circle">
-                                <h5 class="text-bold">Всё красава!</h5>
-                                <p>“Our evening at Billiard Club was wonderful as always! Our guests loved being able to mingle around, play pool and ping pong during the evening. The food was wonderful, the bar was amazing, and the service was outstanding! Everyone left very pleased and very impressed with their experience.”</p>
+                                <h5 class="text-bold">Нравится что работает доставка!</h5>
+                                <p>“Вечером, с 18-22 очень удобно получать всё что нужно для завтрашнего монтажа. Проснулся и поехал сразу на монтаж! Не нужно никуда ехать, время много экономлю.”</p>
                                 <p class="big text-sbold">
                                     <cite>Евгений Арзубов</cite>
                                 </p>
                             </blockquote>
                             <blockquote class="quote"><img src="promo/images/index-16.jpg" width="134" height="134" alt="" class="img-responsive center-block img-circle">
-                                <h5 class="text-bold">Очень удобно!</h5>
-                                <p>“Our evening at Billiard Club was wonderful as always! Our guests loved being able to mingle around, play pool and ping pong during the evening. The food was wonderful, the bar was amazing, and the service was outstanding! Everyone left very pleased and very impressed with their experience.”</p>
+                                <h5 class="text-bold">Это новый уровень сервиса!</h5>
+                                <p>“За 10 лет работы с разнымими компаниями я нашёл лучшую!  Потолки высшего качества заранее заказанные по низкой цене с бесплатной доставкой ко мне домой -это лучшее что я находил!!!”</p>
                                 <p class="big text-sbold">
-                                    <cite>Сергей трубин</cite>
+                                    <cite>Сергей Трубин</cite>
                                 </p>
                             </blockquote>
                         </div>
