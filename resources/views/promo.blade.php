@@ -2,9 +2,11 @@
 <html lang="ru" class="wide wow-animation">
 <head>
     <!-- Site Title-->
-    <title>1000и1.рф</title>
+    <title>{{ $title }}</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="Description" content="{{ $description }}">
+    <meta name="Keywords" content="{{ $keywords }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <script src="promo/js/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
@@ -31,9 +33,8 @@
     <header class="page-header">
         <div class="navigation">
             <div class="navigation-inner">
-                <a class="navigation-logo">
-                    1000и1.рф
-                </a>
+                <a href="http://1000i1.ru" target="_blank" class="navigation-logo">1000i1.ru
+                    {{--<img src="promo/images/logo.jpg" alt="">--}}</a>
             </div>
             <div class="navigation-contacts">
                 <div class="media">
@@ -124,8 +125,11 @@
                         <div class="counter-divider">
                             <!-- CountTo-->
                             <div class="counter-title">Уже более</div>
-                            <div data-from="0" data-to="7" class="counter"></div>
-                            <div class="counter-title">лет Мы производим для Вас потолки</div>
+                            <span>
+                                <div data-from="0" data-to="7" class="counter"></div>
+                                <div class="counter-units">лет</div>
+                            </span>
+                            <div class="counter-title">Мы производим для Вас потолки</div>
                         </div>
                     </div>
                     <div class="cell-md-3 cell-sm-5">
@@ -148,8 +152,11 @@
                     <div class="cell-md-3 cell-sm-5">
                         <div class="offset-top-30 offset-md-top-0">
                             <!-- CountTo-->
-                            <div class="counter-title">Произвели потолков более M<sup><small>2</small></sup></div>
-                            <div data-from="0" data-to="175000" class="counter counter-offset"></div>
+                            <div class="counter-title">Произвели потолков более </div>
+                            <span>
+                                <div data-from="0" data-to="175000" class="counter counter-offset"></div>
+                                <div class="counter-units">м<sup><small>2</small></sup></div>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -161,7 +168,7 @@
                 <div class="offset-top-10">
                     <img src="promo/images/price.png" alt="" class="img-responsive center-block reveal-inline-block">
                 </div>
-                <a href="promo/uploads/price.xlsx" class="btn btn-white offset-top-30 btn-sm">Скачать</a>
+                <a href="promo/images/price.png" target="_blank" class="btn btn-white offset-top-30 btn-sm">Скачать</a>
             </div>
         </section>
         <section class="section-90 bg-warning">
@@ -178,9 +185,9 @@
                                     <span class="pricing-box-price-sub">р</span>
                                 </div>
                             </div>
-                            <div class="pricing-box-body">
-                                <a class="btn-block btn btn-default">Заказать</a>
-                            </div>
+                            {{--<div class="pricing-box-body">--}}
+                                {{--<a class="btn-block btn btn-default">Заказать</a>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                 </div>
@@ -313,9 +320,9 @@
             <div class="shell">
                 <h2>Как мы работаем:</h2>
                 <!-- Owl Carousel-->
-                <div data-dots="true" data-items="5" data-xs-items="2" data-sm-items="2" data-md-items="5" data-lg-items="5"
-                     data-loop="false" data-margin="30" data-mouse-drag="false" class="offset-top-55 owl-carousel owl-carousel-dots-dark"
-                     data-dots-each="2">
+                <div data-dots="true" data-items="2" data-xs-items="2" data-sm-items="2" data-md-items="5"
+                     data-lg-items="5" data-loop="false" data-margin="30" data-mouse-drag="false"
+                     class="offset-top-55 owl-carousel owl-carousel-dots-dark" data-dots-each="2">
                     <div class="item">
                         <h6><a class="text-base">Шаг 1</a></h6>
                         <p class="text-gray">

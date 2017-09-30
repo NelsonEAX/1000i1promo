@@ -21864,11 +21864,12 @@ html:not(.lt-ie10) .not-animated {
   animation-name: slideOutUp;
 }
 html .counter {
+  display: inline-block;
   margin-bottom: 0;
   color: #c4c4c4;
   font-family: Trocchi, "Times New Roman", Times, serif;
   line-height: 1.3;
-  font-size: 90px;
+  font-size: 70px;
 }
 html .counter-title {
   font-size: 18px;
@@ -28227,4 +28228,12 @@ input:-webkit-autofill {
 .navigation-logo{
   font-size: 18px;
   color: #fff;
+}
+
+.counter-units{
+  display: inline-block;
+  color: #c4c4c4;
+  font-family: Trocchi, "Times New Roman", Times, serif;
+  line-height: 1.3;
+  font-size: 50px;
 }
