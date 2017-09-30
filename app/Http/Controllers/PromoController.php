@@ -112,7 +112,7 @@ class PromoController extends Controller
                 }
 
                 Mail::send('email.order', $email_info, function ($message) use ($email_attach) {
-                    $message->from('sender@1000i1.ru', '1000и1.рф');
+                    $message->from('nelsoneax@yandex.ru', 'zakaz.1000i1.ru');
                     $message->to('sistem_p@mail.ru')->cc('nelsoneax@yandex.ru')
                         ->subject('Заявка с 1000и1.рф');
 
