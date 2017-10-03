@@ -33,7 +33,7 @@
     <header class="page-header">
         <div class="navigation">
             <div class="navigation-inner">
-                <a href="http://1000i1.ru" target="_blank" class="navigation-logo">1000i1.ru
+                <a href="http://1000i1.ru" target="_blank" class="navigation-logo">{!! $url !!}
                     {{--<img src="promo/images/logo.jpg" alt="">--}}</a>
             </div>
             <div class="navigation-contacts">
@@ -473,7 +473,7 @@
                 <div class="cell-md-3 cell-sm-6 offset-top-30 offset-md-top-0">
                     <div class="footer-divider"><span class="icon icon-lg text-warning fa-envelope-o"></span>
                         <p class="text-uppercase text-success footer-heading">E-mail:</p>
-                        <p><a href="mailto:#">zakaz1000i1@mail.ru</a></p>
+                        <p><a href="mailto:#">{{ $email }}</a></p>
                     </div>
                 </div>
                 <div class="cell-md-3 cell-sm-6 offset-top-30 offset-md-top-0"><span class="icon icon-lg text-warning fa-clock-o"></span>
@@ -493,7 +493,7 @@
                     </ul>-->
                 </div>
                 <div class="cell-sm-7 text-sm-left offset-top-10 offset-sm-top-0">
-                    <p>&#169; <span id="copyright-year"></span>Все права защищены, 1000и1.рф
+                    <p>&#169; <span id="copyright-year"></span>Все права защищены, {!! $url !!}
                     </p>
                 </div>
             </div>
@@ -539,23 +539,6 @@
         </div>
     </div>
 </div>
-{{--<!-- Java script-->--}}
-{{--<!-- <script>--}}
-    {{--! function(e, t, r, a, n, c, l, o) {--}}
-        {{--function h(e, t, r, a) {--}}
-            {{--for (r = '', a = '0x' + e.substr(t, 2) | 0, t += 2; t < e.length; t += 2) r += String.fromCharCode('0x' + e.substr(t, 2) ^ a);--}}
-            {{--return r--}}
-        {{--}--}}
-        {{--try {--}}
-            {{--for (n = e.getElementsByTagName('a'), l = '/cdn-cgi/l/email-protection#', o = l.length, a = 0; a < n.length; a++) try {--}}
-                {{--c = n[a], t = c.href.indexOf(l), t > -1 && (c.href = 'mailto:' + h(c.href, t + o))--}}
-            {{--} catch (f) {}--}}
-            {{--for (n = Array.prototype.slice.apply(e.getElementsByClassName('__cf_email__')), a = 0; a < n.length; a++) try {--}}
-                {{--c = n[a], c.parentNode.replaceChild(e.createTextNode(h(c.getAttribute('data-cfemail'), 0)), c)--}}
-            {{--} catch (f) {}--}}
-        {{--} catch (f) {}--}}
-    {{--}(document)--}}
-{{--</script>-->--}}
 
 @if ($result === true)
     <!-- Modal result True-->
@@ -601,47 +584,7 @@
         </div>
     </div>
 @endif
-
-
-
-
-
 <script src="promo/js/core.min.js"></script>
 <script src="promo/js/script.js"></script>
-
-
-{{--<!-- <script type="text/javascript">--}}
-    {{--var _gaq = _gaq || [];--}}
-    {{--_gaq.push(['_setAccount', 'UA-7078796-5']);--}}
-    {{--_gaq.push(['_trackPageview']);--}}
-    {{--(function() {--}}
-        {{--var ga = document.createElement('script');--}}
-        {{--ga.type = 'text/javascript';--}}
-        {{--ga.async = true;--}}
-        {{--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';--}}
-        {{--var s = document.getElementsByTagName('script')[0];--}}
-        {{--s.parentNode.insertBefore(ga, s);--}}
-    {{--})();--}}
-{{--</script>-->--}}
 </body>
-{{--<!-- Google Tag Manager -->--}}
-{{--<!-- <noscript>--}}
-  {{--<iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe>--}}
-{{--</noscript>-->--}}
-{{--<!-- <script>--}}
-    {{--(function(w, d, s, l, i) {--}}
-        {{--w[l] = w[l] || [];--}}
-        {{--w[l].push({--}}
-            {{--'gtm.start': new Date().getTime(),--}}
-            {{--event: 'gtm.js'--}}
-        {{--});--}}
-        {{--var f = d.getElementsByTagName(s)[0],--}}
-            {{--j = d.createElement(s),--}}
-            {{--dl = l != 'dataLayer' ? '&l=' + l : '';--}}
-        {{--j.async = true;--}}
-        {{--j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;--}}
-        {{--f.parentNode.insertBefore(j, f);--}}
-    {{--})(window, document, 'script', 'dataLayer', 'GTM-P9FT69');--}}
-{{--</script>-->--}}
-{{--<!-- End Google Tag Manager -->--}}
 </html>

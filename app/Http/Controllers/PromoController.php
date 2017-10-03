@@ -33,6 +33,7 @@ class PromoController extends Controller
         $data['keywords'] = "натяжные потолки, установка, монтаж, полотна";
         $data['title'] = "Натяжные потолки для дилеров в Екатеринбурге";
 
+        $data['url'] = "1000<span style='color: #f76d56;'>i</span>1.ru";
         $data['phone'] = "89222959125";
         $data['email'] = "zakaz1000i1@mail.ru";
         $data['time_gap1'] = "7-11";
@@ -112,9 +113,9 @@ class PromoController extends Controller
                 }
 
                 Mail::send('email.order', $email_info, function ($message) use ($email_attach) {
-                    $message->from('nelsoneax@yandex.ru', 'zakaz.1000i1.ru');
-                    $message->to('sistem_p@mail.ru')->cc('nelsoneax@yandex.ru')
-                        ->subject('Заявка с 1000и1.рф');
+                    $message->from('sender@1000i1.ru', 'Робот-zakaz.1000i1.ru');
+                    $message->to('sistem_p@mail.ru')->bcc('nelsoneax@yandex.ru')
+                        ->subject('Заявка с zakaz.1000i1.ru');
 
                     foreach ($email_attach as $key => $attach) {
                         $message->attach($attach);
