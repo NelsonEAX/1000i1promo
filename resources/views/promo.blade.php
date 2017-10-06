@@ -3,10 +3,11 @@
 <head>
     <!-- Site Title-->
     <title>{{ $title }}</title>
+    <link rel="canonical" href="{{ $canonical }}"/>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="Description" content="{{ $description }}">
-    <meta name="Keywords" content="{{ $keywords }}">
+    <meta name="description" content="{{ $description }}">
+    <meta name="keywords" content="{{ $keywords }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <script src="promo/js/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
@@ -41,7 +42,7 @@
                     <div class="media-left"><span class="icon fa-phone"></span></div>
                     <div class="media-body">
                         <p>Звони:</p>
-                        <a href="callto:#">{{ $phone }}</a>
+                        <a href="callto:{{ $phone }}">{{ $phone }}</a>
                         <p>WhatsApp/Viber</p>
                     </div>
                 </div>
@@ -50,9 +51,11 @@
         <div class="shell">
             <div class="range range-xs-center range-md-around">
                 <div class="cell-md-4 text-md-left section-lg-120 section-top-34 section-xs-top-60 section-md-top-0 section-lg-top-60 cell-xs-middle">
-                    <h1 class="reveal-inline-block text-lg-nowrap">Натяжные</h1>
-                    <h1 class="reveal-inline-block text-lg-nowrap">потолки</h1>
-                    <h1 class="reveal-inline-block offset-md-top-10">дилерам</h1>
+                    <h1>
+                        <span class="reveal-inline-block text-lg-nowrap">Натяжные</span>
+                        <span class="reveal-inline-block text-lg-nowrap">потолки</span>
+                        <span class="reveal-inline-block offset-md-top-10">дилерам</span>
+                    </h1>
                     <hr class="divider divider-md-left">
                     <p class="text-big">
                         круглосуточно, без выходных и праздников
@@ -381,7 +384,9 @@
                     <div data-dots="true" data-items="1" data-xs-items="2" data-sm-items="3" data-lg-items="4" data-loop="true" data-margin="30" data-mouse-drag="false" class="owl-carousel">
                         <div class="thumbnail-variant-1">
                             <a class="reveal-inline-block">
-                                <img src="promo/images/price-01.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                                <img src="promo/images/price-01.png" width="270" height="281" alt="Багет перфорированный"
+                                     class="img-responsive center-block reveal-inline-block"
+                                     title="Багет перфорированный по оптовым ценам">
                             </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a class="text-white">Багет перфорированный</a></h6>
@@ -390,7 +395,9 @@
                         </div>
                         <div class="thumbnail-variant-1">
                             <a class="reveal-inline-block">
-                                <img src="promo/images/price-02.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                                <img src="promo/images/price-02.png" width="270" height="281" alt="Вставка TL 'Готика'"
+                                     class="img-responsive center-block reveal-inline-block"
+                                     title="Вставка TL 'Готика' по оптовым ценам">
                             </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a class="text-white">Вставка TL "Готика"</a></h6>
@@ -399,16 +406,20 @@
                         </div>
                         <div class="thumbnail-variant-1">
                             <a class="reveal-inline-block">
-                                <img src="promo/images/price-03.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                                <img src="promo/images/price-03.png" width="270" height="281" alt="Комплект GX53 'Экола'"
+                                     class="img-responsive center-block reveal-inline-block"
+                                     title="Комплект GX53 'Экола' по оптовым ценам">
                             </a>
                             <div class="caption">
-                                <h6 class="text-sbold"><a class="text-white"> Комплект GX53 "Экола"</a></h6>
+                                <h6 class="text-sbold"><a class="text-white">Комплект GX53 "Экола"</a></h6>
                                 <p class="text-warning text-sbold big">178р</p>
                             </div>
                         </div>
                         <div class="thumbnail-variant-1">
                             <a class="reveal-inline-block">
-                                <img src="promo/images/price-04.png" width="270" height="281" alt="" class="img-responsive center-block reveal-inline-block">
+                                <img src="promo/images/price-04.png" width="270" height="281" alt="Клей 'Контакт' 3гр"
+                                     class="img-responsive center-block reveal-inline-block"
+                                     title="Клей 'Контакт' 3гр по оптовым ценам">
                             </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a class="text-white">Клей "Контакт" 3гр</a></h6>
@@ -461,8 +472,10 @@
                 <div class="cell-md-3 cell-sm-6">
                     <div class="footer-divider"><span class="icon icon-lg text-warning fa-phone"></span>
                         <p class="text-uppercase text-success footer-heading">Телефон</p>
-                        <p><a href="callto:#">{{ $phone }}</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
+                        <p><a href="callto:{{ $phone }}">{{ $phone }}</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
+                        <p><a href="tel:{{ $phone }}">{{ $phone }}</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
                     </div>
+                    
                 </div>
                 <div class="cell-md-3 cell-sm-6 offset-top-30 offset-sm-top-0">
                     <div class="footer-divider"><span class="icon icon-lg text-warning fa-map-marker"></span>

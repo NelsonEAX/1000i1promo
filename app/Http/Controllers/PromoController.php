@@ -33,8 +33,9 @@ class PromoController extends Controller
         $data['keywords'] = "натяжные потолки, установка, монтаж, полотна";
         $data['title'] = "Натяжные потолки для дилеров в Екатеринбурге";
 
+        $data['canonical'] = "http://zakaz.1000i1.ru";
         $data['url'] = "1000<span style='color: #f76d56;'>i</span>1.ru";
-        $data['phone'] = "89222959125";
+        $data['phone'] = "+79222959125";
         $data['email'] = "zakaz1000i1@mail.ru";
         $data['time_gap1'] = "7-11";
         $data['time_gap2'] = "13-17";
