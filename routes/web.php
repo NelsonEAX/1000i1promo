@@ -19,8 +19,8 @@
 Auth::routes();
 Route::get('/', 'PromoController@index');
 Route::post('/', 'PromoController@index');
-Route::get('index.php', function(){ return Redirect::to('/', 301); });
-Route::get('index.html', function(){ return Redirect::to('/', 301); });
+Route::get('/index.php', function(){ return Redirect::to('/', 301); });
+Route::get('/index.html', function(){ return Redirect::to('/', 301); });
 
 
 

@@ -10,7 +10,6 @@
     <meta name="keywords" content="{{ $keywords }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <script src="promo/js/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
     <link rel="icon" href="promo/images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Trocchi%7COpen+Sans:300,300italic,400,600,700">
@@ -18,9 +17,10 @@
     <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;">
         <a href="http://windows.microsoft.com/en-US/internet-explorer/">
-            <img src="promo/images/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="Вы используете устаревший браузер
-Чтобы пользоваться сайтом, вам необходимо обновить браузер.
-Это бесплатно и займет всего несколько минут.">
+            <img src="promo/images/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="Вы используете устаревший браузер.
+                        Чтобы пользоваться сайтом, вам необходимо обновить браузер.
+                        Это бесплатно и займет всего несколько минут.">
         </a>
     </div>
     <script src="promo/js/html5shiv.min.js"></script>
@@ -42,7 +42,7 @@
                     <div class="media-left"><span class="icon fa-phone"></span></div>
                     <div class="media-body">
                         <p>Звони:</p>
-                        <a href="callto:{{ $phone }}">{{ $phone }}</a>
+                        <a href="tel:{{ $phone }}">{{ $phone }}</a>
                         <p>WhatsApp/Viber</p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         //'action' => 'PromoController@mail',
                         'method' => 'post',
                         'files' => true,
-                        'class' => 'rd-mailform text-left offset-md-left--30 form-order'
+                        'class' => 'text-left offset-md-left--30 form-order'
                     ]) }}
                         <div class="form-group rd-calendar">
                             <span class="form-icon fa-calendar"></span>
@@ -169,7 +169,8 @@
             <div class="shell">
                 <h2>Наш прайс</h2>
                 <div class="offset-top-10">
-                    <img src="promo/images/price.png" alt="" class="img-responsive center-block reveal-inline-block">
+                    <img src="promo/images/price.png" alt="Прайс на продукцию" title="Прайс на продукцию и услуги"
+                         class="img-responsive center-block reveal-inline-block">
                 </div>
                 <a href="promo/images/price.png" target="_blank" class="btn btn-white offset-top-30 btn-sm">Скачать</a>
             </div>
@@ -381,7 +382,8 @@
                 <h2>Выгодные цены</h2>
                 <div class="offset-top--10">
                     <!-- Owl Carousel-->
-                    <div data-dots="true" data-items="1" data-xs-items="2" data-sm-items="3" data-lg-items="4" data-loop="true" data-margin="30" data-mouse-drag="false" class="owl-carousel">
+                    <div data-dots="true" data-items="1" data-xs-items="2" data-sm-items="3" data-lg-items="4"
+                         data-loop="true" data-margin="30" data-mouse-drag="false" class="owl-carousel">
                         <div class="thumbnail-variant-1">
                             <a class="reveal-inline-block">
                                 <img src="promo/images/price-01.png" width="270" height="281" alt="Багет перфорированный"
@@ -437,24 +439,43 @@
                 <div class="range range-xs-center">
                     <div class="cell-md-10">
                         <!-- Owl Carousel-->
-                        <div data-items="1" data-loop="true" data-dots="true" data-nav="true" data-mouse-drag="false" class="owl-carousel owl-carousel-dots-warning owl-navigation">
-                            <blockquote class="quote"><img src="promo/images/index-16.jpg" width="134" height="134" alt="" class="img-responsive center-block img-circle">
+                        <div data-items="1" data-loop="true" data-dots="true" data-nav="true" data-mouse-drag="false"
+                             class="owl-carousel owl-carousel-dots-warning owl-navigation">
+                            <blockquote class="quote">
+                                <img src="promo/images/index-16.jpg" width="134" height="134"
+                                     alt="Аватар для отзыва от Александра Ошуркова" title="Александр Ошурков"
+                                     class="img-responsive center-block img-circle">
                                 <h5 class="text-bold">Очень удобный прайс!</h5>
-                                <p>“Если нужно срочно, быстро сделают и быстро привезут. С клиентами стараюсь договариваться на более позние сроки монтажа и почучается хорошая экономия!  Половина клиентов без проблем соглашается делать монтаж на следующей неделе. Особенно выгодно заказывать большие объёмы.”</p>
+                                <p>“Если нужно срочно, быстро сделают и быстро привезут. С клиентами стараюсь
+                                    договариваться на более позние сроки монтажа и почучается хорошая экономия!
+                                    Половина клиентов без проблем соглашается делать монтаж на следующей неделе.
+                                    Особенно выгодно заказывать большие объёмы.”
+                                </p>
                                 <p class="big text-sbold">
                                     <cite>Александр Ошурков</cite>
                                 </p>
                             </blockquote>
-                            <blockquote class="quote"><img src="promo/images/index-16.jpg" width="134" height="134" alt="" class="img-responsive center-block img-circle">
+                            <blockquote class="quote">
+                                <img src="promo/images/index-16.jpg" width="134" height="134"
+                                     alt="Аватар для отзыва от Евгения Арзубова" title="Евгений Арзубов"
+                                     class="img-responsive center-block img-circle">
                                 <h5 class="text-bold">Нравится что работает доставка!</h5>
-                                <p>“Вечером, с 18-22 очень удобно получать всё что нужно для завтрашнего монтажа. Проснулся и поехал сразу на монтаж! Не нужно никуда ехать, время много экономлю.”</p>
+                                <p>“Вечером, с 18-22 очень удобно получать всё что нужно для завтрашнего монтажа.
+                                    Проснулся и поехал сразу на монтаж! Не нужно никуда ехать, время много экономлю.”
+                                </p>
                                 <p class="big text-sbold">
                                     <cite>Евгений Арзубов</cite>
                                 </p>
                             </blockquote>
-                            <blockquote class="quote"><img src="promo/images/index-16.jpg" width="134" height="134" alt="" class="img-responsive center-block img-circle">
+                            <blockquote class="quote">
+                                <img src="promo/images/index-16.jpg" width="134" height="134"
+                                     alt="Аватар для отзыва от Сергея Трубина" title="Сергей Трубин"
+                                     class="img-responsive center-block img-circle">
                                 <h5 class="text-bold">Это новый уровень сервиса!</h5>
-                                <p>“За 10 лет работы с разнымими компаниями я нашёл лучшую!  Потолки высшего качества заранее заказанные по низкой цене с бесплатной доставкой ко мне домой -это лучшее что я находил!!!”</p>
+                                <p>“За 10 лет работы с разнымими компаниями я нашёл лучшую!  Потолки высшего качества
+                                    заранее заказанные по низкой цене с бесплатной доставкой ко мне домой -это лучшее
+                                    что я находил!!!”
+                                </p>
                                 <p class="big text-sbold">
                                     <cite>Сергей Трубин</cite>
                                 </p>
@@ -472,7 +493,6 @@
                 <div class="cell-md-3 cell-sm-6">
                     <div class="footer-divider"><span class="icon icon-lg text-warning fa-phone"></span>
                         <p class="text-uppercase text-success footer-heading">Телефон</p>
-                        <p><a href="callto:{{ $phone }}">{{ $phone }}</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
                         <p><a href="tel:{{ $phone }}">{{ $phone }}</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
                     </div>
 
@@ -518,40 +538,40 @@
 <!-- Global Mailform Output-->
 <div id="form-output-global" class="snackbars"></div>
 <!-- PhotoSwipe Gallery-->
-<div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-                <button title="Close (Esc)" class="pswp__button pswp__button--close"></button>
-                <button title="Share" class="pswp__button pswp__button--share"></button>
-                <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
-                <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-            <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
-            <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__cent"></div>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">--}}
+    {{--<div class="pswp__bg"></div>--}}
+    {{--<div class="pswp__scroll-wrap">--}}
+        {{--<div class="pswp__container">--}}
+            {{--<div class="pswp__item"></div>--}}
+            {{--<div class="pswp__item"></div>--}}
+            {{--<div class="pswp__item"></div>--}}
+        {{--</div>--}}
+        {{--<div class="pswp__ui pswp__ui--hidden">--}}
+            {{--<div class="pswp__top-bar">--}}
+                {{--<div class="pswp__counter"></div>--}}
+                {{--<button title="Close (Esc)" class="pswp__button pswp__button--close"></button>--}}
+                {{--<button title="Share" class="pswp__button pswp__button--share"></button>--}}
+                {{--<button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>--}}
+                {{--<button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>--}}
+                {{--<div class="pswp__preloader">--}}
+                    {{--<div class="pswp__preloader__icn">--}}
+                        {{--<div class="pswp__preloader__cut">--}}
+                            {{--<div class="pswp__preloader__donut"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">--}}
+                {{--<div class="pswp__share-tooltip"></div>--}}
+            {{--</div>--}}
+            {{--<button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>--}}
+            {{--<button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>--}}
+            {{--<div class="pswp__caption">--}}
+                {{--<div class="pswp__caption__cent"></div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</div>--}}
 
 @if ($result === true)
     <!-- Modal result True-->
