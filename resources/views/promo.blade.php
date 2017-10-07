@@ -51,11 +51,7 @@
         <div class="shell">
             <div class="range range-xs-center range-md-around">
                 <div class="cell-md-4 text-md-left section-lg-120 section-top-34 section-xs-top-60 section-md-top-0 section-lg-top-60 cell-xs-middle">
-                    <h1 class="reveal-inline-block text-lg-nowrap offset-md-top-10">
-                        <p>Натяжные</p>
-                        <p>потолки</p>
-                        <p>дилерам</p>
-                    </h1>
+                    <h1 class="reveal-inline-block text-lg-nowrap offset-md-top-10"><p>Натяжные</p><p>потолки</p><p>дилерам</p></h1>
                     <hr class="divider divider-md-left">
                     <p class="text-big">
                         круглосуточно, без выходных и праздников
