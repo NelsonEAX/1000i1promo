@@ -51,10 +51,10 @@
         <div class="shell">
             <div class="range range-xs-center range-md-around">
                 <div class="cell-md-4 text-md-left section-lg-120 section-top-34 section-xs-top-60 section-md-top-0 section-lg-top-60 cell-xs-middle">
-                    <h1>
-                        <span class="reveal-inline-block text-lg-nowrap">Натяжные</span>
-                        <span class="reveal-inline-block text-lg-nowrap">потолки</span>
-                        <span class="reveal-inline-block offset-md-top-10">дилерам</span>
+                    <h1 class="reveal-inline-block text-lg-nowrap offset-md-top-10">
+                        <p>Натяжные</p>
+                        <p>потолки</p>
+                        <p>дилерам</p>
                     </h1>
                     <hr class="divider divider-md-left">
                     <p class="text-big">
@@ -475,7 +475,7 @@
                         <p><a href="callto:{{ $phone }}">{{ $phone }}</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
                         <p><a href="tel:{{ $phone }}">{{ $phone }}</a><br class="veil reveal-sm-block"> WhatsApp/Viber</p>
                     </div>
-                    
+
                 </div>
                 <div class="cell-md-3 cell-sm-6 offset-top-30 offset-sm-top-0">
                     <div class="footer-divider"><span class="icon icon-lg text-warning fa-map-marker"></span>
