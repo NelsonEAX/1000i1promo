@@ -161,33 +161,64 @@
                 </div>
             </div>
         </section>
-        <section class="context-dark section-90 bg-success-grad">
+        <section class="context-dark section-90 bg-warning">
             <div class="shell">
                 <h2>Наш прайс</h2>
                 <div class="offset-top-10">
                     <img src="promo/images/price.png" alt="Прайс на продукцию" title="Прайс на продукцию и услуги"
                          class="img-responsive center-block reveal-inline-block">
                 </div>
-                <a href="promo/images/price.png" target="_blank" class="btn btn-white offset-top-30 btn-sm">Скачать</a>
+                {{--<a href="promo/images/price.png" target="_blank" class="btn btn-white offset-top-30 btn-sm">Скачать</a>--}}
             </div>
         </section>
-        <section class="section-90 bg-warning">
+        <section class="section-90 bg-success-grad">
             <div class="shell">
                 <h2>АКЦИЯ!</h2>
                 <div class="range range-md-middle range-xs-center">
                     <div class="cell-md-4 cell-sm-8 cell-md-push-1">
-                        <div class="pricing-box pricing-box-danger">
-                            <div class="pricing-box-title">Бесплатная доставка!</div>
+                        <div class="pricing-box pricing-box-success">
+                            <div class="pricing-box-title">Дополнительная</div>
                             <div class="pricing-box-panel">
                                 <div class="pricing-box-price">
-                                    <span class="pricing-box-price-sub">от</span>
-                                    <span class="pricing-box-price-counter">5000</span>
-                                    <span class="pricing-box-price-sub">р</span>
+                                    <span class="pricing-box-price-sub">Cкидка 3%</span>
                                 </div>
                             </div>
-                            {{--<div class="pricing-box-body">--}}
-                                {{--<a class="btn-block btn btn-default">Заказать</a>--}}
-                            {{--</div>--}}
+                            <div class="pricing-box-body">
+                                <ul class="list-marked">
+                                    <li>Если заказ сделан с помощью нашей программы</li>
+                                </ul>
+                                <a class="btn-block btn btn-default" data-toggle="modal" data-target="#programm-modal">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell-md-4 cell-sm-6 offset-top-30">
+                        <div class="pricing-box pricing-box-warning pricing-box-right">
+                            <div class="pricing-box-title">Бесплатная</div>
+                            <div class="pricing-box-panel">
+                                <div class="pricing-box-price">
+                                    <span class="pricing-box-price-sub">доставка по Екатеринбургу</span>
+                                </div>
+                            </div>
+                            <div class="pricing-box-body">
+                                <ul class="list-marked">
+                                    <li>Заказ от 5000р</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell-md-4 cell-sm-6 offset-top-30 cell-md-push-2">
+                        <div class="pricing-box pricing-box-danger pricing-box-left">
+                            <div class="pricing-box-title">Бесплатная</div>
+                            <div class="pricing-box-panel">
+                                <div class="pricing-box-price">
+                                    <span class="pricing-box-price-sub">доставка по области</span>
+                                </div>
+                            </div>
+                            <div class="pricing-box-body">
+                                <ul class="list-marked">
+                                    <li>Заказ от 10000р</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -320,56 +351,25 @@
             <div class="shell">
                 <h2>Как мы работаем:</h2>
                 <!-- Owl Carousel-->
-                <div data-dots="true" data-items="2" data-xs-items="2" data-sm-items="2" data-md-items="5"
-                     data-lg-items="5" data-loop="false" data-margin="30" data-mouse-drag="false"
+                <div data-dots="true" data-items="2" data-xs-items="2" data-sm-items="2" data-md-items="4"
+                     data-lg-items="4" data-loop="false" data-margin="30" data-mouse-drag="false"
                      class="offset-top-55 owl-carousel owl-carousel-dots-dark" data-dots-each="2">
                     <div class="item">
                         <h6><a class="text-base">Шаг 1</a></h6>
-                        <p class="text-gray">
-                            <span class="text-danger">Вы</span>
-                            отправляете свой заказ
-                        </p>
-                        <p class="text-gray">whatsApp: {{ $phone }}</p>
-                        <p class="text-gray">Viber: {{ $phone }}</p>
-                        <p class="text-gray">Email:	{{ $email }}</p>
-                        <p class="text-gray">Форма заказа на нашем сайте</p>
+                        <p class="text-gray">Размещаете заказ на сайте</p>
                     </div>
                     <div class="item">
                         <h6><a class="text-base">Шаг 2</a></h6>
-                        <p class="text-gray">
-                            <span class="text-danger">Мы</span>
-                            строим потолки в программе, Отправляем чертежи на согласование
-                        </p>
-                        <p class="text-gray">Выставляем общий счет</p>
+                        <p class="text-gray">С Вами связывается менеджер для уточнения детали заказа</p>
                     </div>
                     <div class="item">
                         <h6><a class="text-base">Шаг 3</a></h6>
-                        <p class="text-gray">
-                            <span class="text-danger">Вы</span>
-                            проверяетет чертежи и счет и если всё верно оплачиваете
-                            счёт любым пердложенным способом. (электронным)
-                        </p>
+                        <p class="text-gray">Вносите оплату</p>
                     </div>
                     <div class="item">
                         <h6><a class="text-base">Шаг 4</a></h6>
-                        <p class="text-gray">
-                            <span class="text-danger">Мы</span>
-                            получив оплату, ставим ваш заказ
-                            в очередь на изготовление. Лаковые полотна
-                            запускаем в работу не раньше чем за 2 дня
-                            до даты изготовления.
-                        </p>
+                        <p class="text-gray">В назначенную дату и время получаете свой заказ</p>
                     </div>
-                    <div class="item">
-                        <h6><a class="text-base">Шаг 5</a></h6>
-                        <p class="text-gray">
-                            <span class="text-danger">Вы</span>
-                            просыпаетесь, делаете спокойно все свои домашние дела
-                            (ведь мы вам уже привезли заказ) и спокойно едите на объект.
-                        </p>
-                        <p class="text-info">экономьте до 2х часов в день!</p>
-                    </div>
-                    <div class="item"></div>
                 </div>
             </div>
         </section>
@@ -438,39 +438,41 @@
                         <div data-items="1" data-loop="true" data-dots="true" data-nav="true" data-mouse-drag="false"
                              class="owl-carousel owl-carousel-dots-warning owl-navigation">
                             <blockquote class="quote">
-                                <img src="promo/images/index-16.jpg" width="134" height="134"
-                                     alt="Аватар для отзыва от Александра Ошуркова" title="Александр Ошурков"
+                                <img src="promo/images/avatar-01.jpg" width="134" height="134"
+                                     alt="Аватар для отзыва от Алексея Панафидина" title="Алексей Панафидин"
                                      class="img-responsive center-block img-circle">
                                 <h5 class="text-bold">Очень удобный прайс!</h5>
                                 <p>“Если нужно срочно, быстро сделают и быстро привезут. С клиентами стараюсь
-                                    договариваться на более позние сроки монтажа и почучается хорошая экономия!
-                                    Половина клиентов без проблем соглашается делать монтаж на следующей неделе.
-                                    Особенно выгодно заказывать большие объёмы.”
+                                    договариваться на более поздние сроки монтажа, планирую монтажи на неделю
+                                    вперёд, "всё по полочкам".  Большинство клиентов сразу соглашается делать
+                                    монтаж на следующей неделе. Особенно выгодно заказывать большие объёмы.”
                                 </p>
                                 <p class="big text-sbold">
-                                    <cite>Александр Ошурков</cite>
+                                    <cite>Алексей Панафидин</cite>
                                 </p>
                             </blockquote>
                             <blockquote class="quote">
-                                <img src="promo/images/index-16.jpg" width="134" height="134"
+                                <img src="promo/images/avatar-02.jpg" width="134" height="134"
                                      alt="Аватар для отзыва от Евгения Арзубова" title="Евгений Арзубов"
                                      class="img-responsive center-block img-circle">
-                                <h5 class="text-bold">Нравится что работает доставка!</h5>
-                                <p>“Вечером, с 18-22 очень удобно получать всё что нужно для завтрашнего монтажа.
-                                    Проснулся и поехал сразу на монтаж! Не нужно никуда ехать, время много экономлю.”
+                                <h5 class="text-bold">Нравится как работает доставка!</h5>
+                                <p>“Заранее, вечером очень удобно получать всё что нужно для завтрашнего монтажа.
+                                    Проснулся, сделал все домашние дела, и сразу поехал на монтаж.
+                                    Не нужно никуда ехать, время много экономлю!”
                                 </p>
                                 <p class="big text-sbold">
                                     <cite>Евгений Арзубов</cite>
                                 </p>
                             </blockquote>
                             <blockquote class="quote">
-                                <img src="promo/images/index-16.jpg" width="134" height="134"
+                                <img src="promo/images/avatar-03.jpg" width="134" height="134"
                                      alt="Аватар для отзыва от Сергея Трубина" title="Сергей Трубин"
                                      class="img-responsive center-block img-circle">
                                 <h5 class="text-bold">Это новый уровень сервиса!</h5>
-                                <p>“За 10 лет работы с разнымими компаниями я нашёл лучшую!  Потолки высшего качества
-                                    заранее заказанные по низкой цене с бесплатной доставкой ко мне домой -это лучшее
-                                    что я находил!!!”
+                                <p>“За 10 лет работы с разными компаниями, теперь я работаю с лучшей.
+                                    Отличные потолки по низкой цене с бесплатной доставкой ко мне домой
+                                    - это лучшее что я находил. Если возникает брак, срочно изготавливают
+                                    новый и отправляют на объект+денежная компенсация!”
                                 </p>
                                 <p class="big text-sbold">
                                     <cite>Сергей Трубин</cite>
@@ -522,7 +524,7 @@
                     </ul>-->
                 </div>
                 <div class="cell-sm-7 text-sm-left offset-top-10 offset-sm-top-0">
-                    <p>&#169; <span id="copyright-year"></span>Все права защищены, {!! $url !!}
+                    <p>&#169; <span id="copyright-year"></span> Все права защищены, {!! $url !!}
                     </p>
                 </div>
             </div>
@@ -568,7 +570,22 @@
         {{--</div>--}}
     {{--</div>--}}
 {{--</div>--}}
-
+<div class="modal fade shell" id="programm-modal" tabindex="-1" role="dialog" aria-labelledby="programm-modal-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-success" id="programm-modal-label">Заголовок</h4>
+            </div>
+            <div class="modal-body text-center">
+                Описание того, что есть изи-силинг, его можно получить от нас,
+                и скидка будет если заказ происходит с прикрепленным файлом из изи-силинга
+            </div>
+        </div>
+    </div>
+</div>
 @if ($result === true)
     <!-- Modal result True-->
     <div class="modal fade shell" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal-label">
