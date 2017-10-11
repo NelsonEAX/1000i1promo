@@ -57,13 +57,24 @@ class PromoController extends Controller
         $data['request']['time2'] = $request->time == $data['time_gap2'] ? ' selected' : '';
         $data['request']['time3'] = $request->time == $data['time_gap3'] ? ' selected' : '';
         $data['request']['phone'] = $request->phone ? $request->phone : '';
+        $data['request']['email'] = $request->email ? $request->email : '';
         $data['request']['adres'] = $request->adres ? $request->adres : '';
 
+        //dd($request->email);
         //dd($request->file('images'));
-        if ( !$request->phone && !$request->adres && !$request->date && !$request->time && !$request->file('images') ){
+        if ( !$request->phone && !$request->adres && !$request->date &&
+             !$request->time && !$request->email && !$request->file('images') ){
+
+        } else if ( $request->email ){
+        // Получили почту - отправляем на нее ссылку на файл
+
+            $data['result'] = true;
+            $data['result_msg'] = 'Получена почта';
+            $data['result_hdr'] = 'Скоро все придет...';
 
         } else if ( !$request->phone || !$request->adres || !$request->date || !$request->time ){
         // Запрашиваем данные еще раз, если не все поля заполнены
+
             $data['result'] = false;
             $data['result_msg'] = 'Необходимо заполнить все поля';
             $data['result_hdr'] = 'Еще не все...';
@@ -125,6 +136,8 @@ class PromoController extends Controller
 
                 });
                 $data['result'] = true;
+                $data['result_hdr'] = 'Заявка принята';
+                $data['result_msg'] = 'Скоро с вами свяжутся наши менеджеры!';
                 // Значения формы обнуляем
                 $data['request']['date'] = '';
                 $data['request']['time1'] = '';

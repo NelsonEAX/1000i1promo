@@ -87,13 +87,13 @@
                         <div class="form-group">
                             <span class="form-icon fa-phone"></span>
                             <label for="phone" class="form-label">Телефон</label>
-                            <input id="phone" type="tel" name="phone" class="form-control"
+                            <input id="phone" type="tel" name="phone" class="form-control main-form"
                                    value="{{ $request['phone'] }}" required pattern="\+*[0-9]{6,15}">
                         </div>
                         <div class="form-group">
                             <span class="form-icon fa-map-marker"></span>
                             <label for="adres" class="form-label">Адресс доставки</label>
-                            <input id="adres" type="text" name="adres" class="form-control"
+                            <input id="adres" type="text" name="adres" class="form-control main-form"
                                    value="{{ $request['adres'] }}" required>
                         </div>
                         <div class="form-group dropup" id="dropdown-file-div">
@@ -580,8 +580,21 @@
                 <h4 class="modal-title text-success" id="programm-modal-label">Заголовок</h4>
             </div>
             <div class="modal-body text-center">
-                Описание того, что есть изи-силинг, его можно получить от нас,
-                и скидка будет если заказ происходит с прикрепленным файлом из изи-силинга
+                {{ Form::open([
+                        'url' => '/',
+                        //'action' => 'PromoController@mail',
+                        'method' => 'post',
+                        'files' => true,
+                        'class' => 'text-left offset-md-left--30 form-order'
+                    ]) }}
+                <div class="form-group">
+                    <span class="form-icon fa-envelope"></span>
+                    {{--<label for="email" class="form-label form-label-inverse">email</label>--}}
+                    <input id="email" type="email" name="email" class="form-control form-control-inverse"
+                           value="{{ $request['email'] }}" required  placeholder="sophie@example.com">
+                </div>
+                <button type="submit" class="btn btn-block">Получить программу</button>
+                {{ Form::close() }}
             </div>
         </div>
     </div>
@@ -595,17 +608,21 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title text-success" id="result-modal-label">Заявка принята</h4>
+                    <h4 class="modal-title text-success" id="result-modal-label">{{ $result_hdr }}</h4>
                 </div>
                 <div class="modal-body text-center">
-                    Скоро с вами свяжутся наши менеджеры!
+                    @if ($result_msg)
+                        {{ $result_msg }}
+                    @else
+                        Скоро с вами свяжутся наши менеджеры!
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 @elseif ($result === false)
     <!-- Modal result False-->
-    <div class=" modal modal-danger fade shell" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal-label">
+    <div class="modal fade shell" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal-label">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
@@ -615,13 +632,11 @@
                     <h4 class="modal-title text-danger" id="result-modal-label">{{ $result_hdr }}</h4>
                 </div>
                 <div class="modal-body text-center">
-
                     @if ($result_msg)
                         {{ $result_msg }}
                     @else
                         Возникли проблемы при отправке заявки. Попробуйте позже, либо свяжитесь с нами по телефону {{ $phone }}
                     @endif
-
                 </div>
                 {{--<div class="modal-footer">--}}
                     {{--<button type="button" class="btn btn-default" data-dismiss="modal">Понял</button>--}}
