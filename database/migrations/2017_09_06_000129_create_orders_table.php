@@ -33,6 +33,14 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        /** EMAIL ДИЛЕРОВ */
+        Schema::create('emails', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('email', 255)->comment('Емаил, на котороый отправляли прогу');
+            $table->timestamps();
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -44,5 +52,6 @@ class CreateOrdersTable extends Migration
     {
         Schema::dropIfExists('orders');
         Schema::dropIfExists('storages');
+        Schema::dropIfExists('emails');
     }
 }

@@ -570,16 +570,23 @@
         {{--</div>--}}
     {{--</div>--}}
 {{--</div>--}}
-<div class="modal fade shell" id="programm-modal" tabindex="-1" role="dialog" aria-labelledby="programm-modal-label">
+
+<div class="modal fade shell" id="programm-modal"
+     tabindex="-1" role="dialog" aria-labelledby="programm-modal-label">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title text-success" id="programm-modal-label">Заголовок</h4>
+                @if (isset($email_result))
+                    <h4 class="modal-title text-danger" id="programm-modal-label">{{ $email_result_hdr }}</h4>
+                @else
+                    <h4 class="modal-title text-success" id="programm-modal-label">Введите свой email</h4>
+                @endif
             </div>
             <div class="modal-body text-center">
+                {{ isset($email_result_msg) ? $email_result_msg : 'На него будет отправленна программа EasyCeiling' }}
                 {{ Form::open([
                         'url' => '/',
                         //'action' => 'PromoController@mail',
@@ -591,7 +598,7 @@
                     <span class="form-icon fa-envelope"></span>
                     {{--<label for="email" class="form-label form-label-inverse">email</label>--}}
                     <input id="email" type="email" name="email" class="form-control form-control-inverse"
-                           value="{{ $request['email'] }}" required  placeholder="sophie@example.com">
+                           value="{{ $request['email'] }}" required placeholder="Введите ваш email">
                 </div>
                 <button type="submit" class="btn btn-block">Получить программу</button>
                 {{ Form::close() }}
@@ -599,6 +606,7 @@
         </div>
     </div>
 </div>
+
 @if ($result === true)
     <!-- Modal result True-->
     <div class="modal fade shell" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal-label">
@@ -647,5 +655,10 @@
 @endif
 <script src="promo/js/core.min.js"></script>
 <script src="promo/js/script.js"></script>
+<script>
+@if ( isset($email_result) )
+    $('#programm-modal').modal('toggle');
+@endif
+</script>
 </body>
 </html>

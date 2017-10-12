@@ -28225,17 +28225,17 @@ input.main-form:-webkit-autofill {
 }
 
 .form-control-inverse::-webkit-input-placeholder {
-  color: #000;
+  color: #444;
 }
 .form-control-inverse:-moz-placeholder {
-  color: #000;
+  color: #444;
 }
 .form-control-inverse::-moz-placeholder {
-  color: #000;
+  color: #444;
   opacity: 1;
 }
 .form-control-inverse:-ms-input-placeholder {
-  color: #000;
+  color: #444;
 }
 
 #dropdown-file-list {

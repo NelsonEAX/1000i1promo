@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Email;
 use App\Models\Order;
 use App\Models\Storage;
 use Mail;
 use Exception;
+use Validator;
 
 class PromoController extends Controller
 {
@@ -36,6 +38,7 @@ class PromoController extends Controller
 
         $data['canonical'] = "http://zakaz.1000i1.ru";
         $data['url'] = "1000<span style='color: #f76d56;'>i</span>1.ru";
+        $data['href'] = $data['canonical']."/promo/654908bd52d3fe51/EasyCeilingDealer.zip";
         $data['phone'] = "+79222959125";
         $data['email'] = "zakaz1000i1@mail.ru";
         $data['time_gap1'] = "7-11";
@@ -68,10 +71,46 @@ class PromoController extends Controller
         } else if ( $request->email ){
         // Получили почту - отправляем на нее ссылку на файл
 
-            $data['result'] = true;
-            $data['result_msg'] = 'Получена почта';
-            $data['result_hdr'] = 'Скоро все придет...';
+            $validator = Validator::make($request->all(), [
+                'email' => 'required|max:255|email'
+            ]);
 
+            if ($validator->fails()) {
+                $data['email_result'] = true;
+                $data['email_result_msg'] = 'Проверьте введенное значение';
+                $data['email_result_hdr'] = 'Еще не все...';
+            } else {
+
+                // Если значение уникально - пишем в базу
+                $unique = Validator::make($request->all(), [
+                    'email' => 'unique:emails,email'
+                ]);
+
+                if (!$unique->fails()) {
+                    $email = new Email;
+                    $email->email = $request->email;
+                    $email->save();
+                }
+
+                // Отправляем письмо
+                $email_adres = $request->email;
+                $email_info = [];
+                $email_info['title'] = $data['url'];
+                $email_info['href'] = $data['href'];
+
+                Mail::send('email.program', $email_info, function ($message) use ($email_adres) {
+                    $message->from('sender@1000i1.ru', 'zakaz.1000i1.ru');
+                    $message->to($email_adres)
+                        ->bcc('sistem_p@mail.ru')
+                        ->bcc('nelsoneax@yandex.ru')
+                        ->subject('EasyCeilingDealer от 1000i1.ru');
+                });
+
+                $data['result'] = true;
+                $data['result_msg'] = 'На указанный email отправленна ссылка на файл';
+                $data['result_hdr'] = 'Заявка принята';
+                $data['request']['email'] = '';
+            }
         } else if ( !$request->phone || !$request->adres || !$request->date || !$request->time ){
         // Запрашиваем данные еще раз, если не все поля заполнены
 
@@ -90,6 +129,7 @@ class PromoController extends Controller
         // Если указанные поля есть - отправляем письмо
             try {
                 $email_info = [];
+                $email_info['title'] = $data['url'];
                 $email_attach = [];
 
                 $order = new Order;
@@ -126,7 +166,7 @@ class PromoController extends Controller
                 }
 
                 Mail::send('email.order', $email_info, function ($message) use ($email_attach) {
-                    $message->from('sender@1000i1.ru', 'Робот-zakaz.1000i1.ru');
+                    $message->from('sender@1000i1.ru', 'zakaz.1000i1.ru');
                     $message->to('sistem_p@mail.ru')->bcc('nelsoneax@yandex.ru')
                         ->subject('Заявка с zakaz.1000i1.ru');
 

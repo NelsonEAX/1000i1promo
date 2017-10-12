@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>1000и1.рф</title>
+    <title>{!! $title !!}</title>
 </head>
 <body>
 
