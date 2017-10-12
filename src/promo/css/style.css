@@ -28210,11 +28210,32 @@ a.pswp__share--download:hover {
 
 /**********************************************************/
 select option { background-color: #000000; }
-input {outline: none;}
-input:-webkit-autofill {
+input.main-form {outline: none;}
+input.main-form:-webkit-autofill {
     -webkit-box-shadow: inset 0 0 0 50px #000 !important; /* Цвет фона */
     -webkit-text-fill-color: #fff !important; /* цвет текста */
     color: #fff !important; /* цвет текста */
+}
+
+.form-control-inverse{
+  color: #000;
+}
+.form-label-inverse {
+  color: #000;
+}
+
+.form-control-inverse::-webkit-input-placeholder {
+  color: #444;
+}
+.form-control-inverse:-moz-placeholder {
+  color: #444;
+}
+.form-control-inverse::-moz-placeholder {
+  color: #444;
+  opacity: 1;
+}
+.form-control-inverse:-ms-input-placeholder {
+  color: #444;
 }
 
 #dropdown-file-list {
