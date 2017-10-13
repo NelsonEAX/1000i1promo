@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-//    watch = require('gulp-watch'),
+    watch = require('gulp-watch'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
 //    sass = require('gulp-sass'),
@@ -81,7 +81,7 @@ gulp.task('style:build', function () {
 //            sourceMap: true,
 //            errLogToConsole: true
 //        }))
-        .pipe(prefixer())
+//        .pipe(prefixer())
         .pipe(cssmin())
 //        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css))
@@ -115,9 +115,9 @@ gulp.task('build', [
 
 
 gulp.task('watch', function(){
-    watch([path.watch.html], function(event, cb) {
-        gulp.start('html:build');
-    });
+    // watch([path.watch.html], function(event, cb) {
+    //     gulp.start('html:build');
+    // });
     watch([path.watch.style], function(event, cb) {
         gulp.start('style:build');
     });

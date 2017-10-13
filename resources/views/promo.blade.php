@@ -600,7 +600,7 @@
                     <input id="email" type="email" name="email" class="form-control form-control-inverse"
                            value="{{ $request['email'] }}" required placeholder="Введите ваш email">
                 </div>
-                <button type="submit" class="btn btn-block">Получить программу</button>
+                <button type="submit" class="btn btn-block">Получить <span class="hidden-xs">программу</span></button>
                 {{ Form::close() }}
             </div>
         </div>
