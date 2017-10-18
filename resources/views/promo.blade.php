@@ -4,6 +4,26 @@
     <!-- Site Title-->
     <title>{{ $title }}</title>
     <link rel="canonical" href="{{ $canonical }}"/>
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Название сайта">
+    <meta property="og:title" content="Заголовок">
+    <meta property="og:description" content="Описание.">
+    <meta property="og:url" content="http://example.com/page.html">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image" content="http://placehold.it/968x504">
+    <meta property="og:image:width" content="968">
+    <meta property="og:image:height" content="504">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Заголовок">
+    <meta name="twitter:description" content="Описание.">
+    <meta name="twitter:image:src" content="http://placehold.it/968x504">
+    <meta name="twitter:url" content="http://example.com/page.html">
+    <meta name="twitter:domain" content="example.com">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@...">
+
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="description" content="{{ $description }}">
