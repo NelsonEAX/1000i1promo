@@ -99,11 +99,16 @@ $document.ready(function() {
     // Перехватываем имя выбранного файла
     function handleGetFileName(evt) {
         var files = evt.target.files;
-        var name = files[0].name;
-
-        var idLabel = evt.target.id.replace(/id/i, 'name');
-        var label = document.querySelector('#' + idLabel);
-        label.innerHTML = name;
+        if(files[0].size > 16000000){
+            //Размер файла превышает допустимый 16m
+            evt.target.parentNode.parentNode.click();
+            $('#big-file-modal').modal('toggle');
+        }else{
+            var name = files[0].name;
+            var idLabel = evt.target.id.replace(/id/i, 'name');
+            var label = document.querySelector('#' + idLabel);
+            label.innerHTML = name;
+        }
     }
 
     //Добавляем input file

@@ -571,6 +571,23 @@
     {{--</div>--}}
 {{--</div>--}}
 
+<div class="modal fade shell" id="big-file-modal"
+     tabindex="-1" role="dialog" aria-labelledby="big-file-modal-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-danger" id="programm-modal-label">Файл слишком большой</h4>
+            </div>
+            <div class="modal-body text-center">
+                Допустимый размер файла 16 Мб. Попробуйте выбрать другой
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade shell" id="programm-modal"
      tabindex="-1" role="dialog" aria-labelledby="programm-modal-label">
     <div class="modal-dialog" role="document">
