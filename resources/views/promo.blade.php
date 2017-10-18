@@ -164,9 +164,9 @@
         <section class="context-dark section-90 bg-warning">
             <div class="shell">
                 <h2>Наш прайс</h2>
-                <div class="offset-top-10">
-                    <img src="promo/images/price.png" alt="Прайс на продукцию" title="Прайс на продукцию и услуги"
-                         class="img-responsive center-block reveal-inline-block">
+                <div class="price-container offset-top-10">
+                    <iframe width="100%" height="500px" frameborder="0"
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-YQHtpHkidirPSOga98tNqT1CRJmS7Cy8ipAZEAtX__0RD1pOjtjpqig8MMkAIBLCIp6ubqUIaZrf/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false"></iframe>
                 </div>
                 {{--<a href="promo/images/price.png" target="_blank" class="btn btn-white offset-top-30 btn-sm">Скачать</a>--}}
             </div>
