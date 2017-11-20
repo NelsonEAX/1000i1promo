@@ -36,11 +36,29 @@ class PromoController extends Controller
         $data['keywords'] = "натяжные потолки, установка, монтаж, полотна";
         $data['title'] = "Натяжные потолки для дилеров в Екатеринбурге";
 
+        $data['og'] = [
+            'site_name' => 'Название сайта',
+            'title' => 'Заголовок',
+            'description' => 'Описание.',
+            'url' => 'http://zakaz.1000i1.ru',
+            'domain' => 'zakaz.1000i1.ru',
+            'image' => 'http://placehold.it/968x504',
+            //Не требующие изменений
+            'image_width' => '968',
+            'image_height' => '504',
+            'type' => 'website',
+            'locale' => 'ru_RU',
+            'card' => '@summary_large_image', # ['summary_large_image','summary','player']
+            'site' => '@NelsonEAX',
+            'creator' => '@NelsonEAX'
+        ];
+
+
         $data['canonical'] = "http://zakaz.1000i1.ru";
         $data['url'] = "1000<span style='color: #f76d56;'>i</span>1.ru";
         $data['href'] = $data['canonical']."/promo/654908bd52d3fe51/EasyCeilingDealer.zip";
-        $data['phone'] = "+79222959125";
-        $data['email'] = "zakaz1000i1@mail.ru";
+        $data['phone'] = "+79826233587";
+        $data['email'] = "zakaz.1000i1@mail.ru";
         $data['time_gap1'] = "7-11";
         $data['time_gap2'] = "13-17";
         $data['time_gap3'] = "19-22";
@@ -167,7 +185,9 @@ class PromoController extends Controller
 
                 Mail::send('email.order', $email_info, function ($message) use ($email_attach) {
                     $message->from('sender@1000i1.ru', 'zakaz.1000i1.ru');
-                    $message->to('sistem_p@mail.ru')->bcc('nelsoneax@yandex.ru')
+                    $message->to('zakaz.1000i1@mail.ru')
+                        ->bcc('sistem_p@mail.ru')
+                        ->bcc('nelsoneax@yandex.ru')
                         ->subject('Заявка с zakaz.1000i1.ru');
 
                     foreach ($email_attach as $key => $attach) {

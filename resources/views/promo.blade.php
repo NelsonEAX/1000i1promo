@@ -5,24 +5,24 @@
     <title>{{ $title }}</title>
     <link rel="canonical" href="{{ $canonical }}"/>
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Название сайта">
-    <meta property="og:title" content="Заголовок">
-    <meta property="og:description" content="Описание.">
-    <meta property="og:url" content="http://example.com/page.html">
-    <meta property="og:locale" content="ru_RU">
-    <meta property="og:image" content="http://placehold.it/968x504">
-    <meta property="og:image:width" content="968">
-    <meta property="og:image:height" content="504">
+    <meta property="og:type" content="{{ $og['type'] }}">
+    <meta property="og:site_name" content="{{ $og['site_name'] }}">
+    <meta property="og:title" content="{{ $og['title'] }}">
+    <meta property="og:description" content="{{ $og['description'] }}">
+    <meta property="og:url" content="{{ $og['url'] }}">
+    <meta property="og:locale" content="{{ $og['locale'] }}">
+    <meta property="og:image" content="{{ $og['image'] }}">
+    <meta property="og:image:width" content="{{ $og['image_width'] }}">
+    <meta property="og:image:height" content="{{ $og['image_height'] }}">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Заголовок">
-    <meta name="twitter:description" content="Описание.">
-    <meta name="twitter:image:src" content="http://placehold.it/968x504">
-    <meta name="twitter:url" content="http://example.com/page.html">
-    <meta name="twitter:domain" content="example.com">
-    <meta name="twitter:site" content="@">
-    <meta name="twitter:creator" content="@...">
+    <meta name="twitter:card" content="{{ $og['card'] }}">
+    <meta name="twitter:title" content="{{ $og['title'] }}">
+    <meta name="twitter:description" content="{{ $og['description'] }}">
+    <meta name="twitter:image:src" content="{{ $og['image'] }}">
+    <meta name="twitter:url" content="{{ $og['url'] }}">
+    <meta name="twitter:domain" content="{{ $og['domain'] }}">
+    <meta name="twitter:site" content="{{ $og['site'] }}">
+    <meta name="twitter:creator" content="{{ $og['creator'] }}">
 
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -193,7 +193,7 @@
         </section>
         <section class="section-90 bg-success-grad">
             <div class="shell">
-                <h2>АКЦИЯ!</h2>
+                <h2>АКЦИИ!</h2>
                 <div class="range range-md-middle range-xs-center">
                     <div class="cell-md-4 cell-sm-8 cell-md-push-1">
                         <div class="pricing-box pricing-box-success">
@@ -380,7 +380,7 @@
                     </div>
                     <div class="item">
                         <h6><a class="text-base">Шаг 2</a></h6>
-                        <p class="text-gray">С Вами связывается менеджер для уточнения детали заказа</p>
+                        <p class="text-gray">С Вами связывается менеджер для уточнения деталей заказа</p>
                     </div>
                     <div class="item">
                         <h6><a class="text-base">Шаг 3</a></h6>
@@ -408,7 +408,7 @@
                             </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a class="text-white">Багет перфорированный</a></h6>
-                                <p class="text-warning text-sbold big">13,8р</p>
+                                <p class="text-warning text-sbold big">14р</p>
                             </div>
                         </div>
                         <div class="thumbnail-variant-1">
@@ -419,7 +419,7 @@
                             </a>
                             <div class="caption">
                                 <h6 class="text-sbold"><a class="text-white">Вставка TL "Готика"</a></h6>
-                                <p class="text-warning text-sbold big">8,9р</p>
+                                <p class="text-warning text-sbold big">8р</p>
                             </div>
                         </div>
                         <div class="thumbnail-variant-1">
@@ -429,7 +429,7 @@
                                      title="Комплект GX53 'Экола' по оптовым ценам">
                             </a>
                             <div class="caption">
-                                <h6 class="text-sbold"><a class="text-white">Комплект GX53 "Экола"</a></h6>
+                                <h6 class="text-sbold"><a class="text-white">Комплект GX53 "Экола" 6вт</a></h6>
                                 <p class="text-warning text-sbold big">178р</p>
                             </div>
                         </div>
