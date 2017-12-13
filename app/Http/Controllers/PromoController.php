@@ -31,8 +31,8 @@ class PromoController extends Controller
     {
         //dd($request);
         $data = [];
-        $data['description'] = "Натяжные потолки и фурнитура для дилеров, монтажников, замерщиков в Екатеринбурге,".
-            "оформление заказа на сайте";
+        $data['description'] = "Натяжные потолки и комплектующие для дилеров. ".
+                               "Программа для построения потолков. Онлайн заказ. Доставка";
         $data['keywords'] = "натяжные потолки, установка, монтаж, полотна";
         $data['title'] = "Натяжные потолки для дилеров в Екатеринбурге";
 
@@ -57,9 +57,10 @@ class PromoController extends Controller
         $data['canonical'] = "http://zakaz.1000i1.ru";
         $data['url'] = "1000<span style='color: #f76d56;'>i</span>1.ru";
         $data['href'] = $data['canonical']."/promo/654908bd52d3fe51/EasyCeilingDealer.zip";
-        $data['phone'] = "+79826233587";
+        $data['phone'] = "+79826233597";
         $data['email'] = "zakaz.1000i1@mail.ru";
-        $data['time_gap1'] = "7-11";
+        $data['time_gap0'] = "самовывоз";
+		$data['time_gap1'] = "7-11";
         $data['time_gap2'] = "13-17";
         $data['time_gap3'] = "19-22";
 
@@ -74,6 +75,7 @@ class PromoController extends Controller
 
         // Значения формы
         $data['request']['date'] = $request->date ? $request->date : '';
+        $data['request']['time0'] = $request->time == $data['time_gap0'] ? ' selected' : '';
         $data['request']['time1'] = $request->time == $data['time_gap1'] ? ' selected' : '';
         $data['request']['time2'] = $request->time == $data['time_gap2'] ? ' selected' : '';
         $data['request']['time3'] = $request->time == $data['time_gap3'] ? ' selected' : '';

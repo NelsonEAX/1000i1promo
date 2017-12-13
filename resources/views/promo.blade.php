@@ -74,8 +74,7 @@
                     <h1 class="reveal-inline-block text-lg-nowrap offset-md-top-10"><p>Натяжные</p><p>потолки</p><p>дилерам</p></h1>
                     <hr class="divider divider-md-left">
                     <p class="text-big">
-                        круглосуточно, без выходных и праздников
-                        + БЕСПЛАТНАЯ ДОСТАВКА
+                        Заказы принимаем с 8:00 по 22:00. Работает доставка.
                     </p>
                 </div>
                 <div class="cell-md-4 img-wrapper veil reveal-lg-block">
@@ -99,6 +98,7 @@
                             <span class="form-icon fa-clock-o"></span>
                             <select name="time" class="form-control" required>
                                 <option value="" selected disabled hidden>Выберете время доставки</option>
+                                <option value="{{ $time_gap0 }}"{{ $request['time0'] }}>Самовывоз</option>
                                 <option value="{{ $time_gap1 }}"{{ $request['time1'] }}>Доставка с {{ $time_gap1 }}</option>
                                 <option value="{{ $time_gap2 }}"{{ $request['time2'] }}>Доставка с {{ $time_gap2 }}</option>
                                 <option value="{{ $time_gap3 }}"{{ $request['time3'] }}>Доставка с {{ $time_gap3 }}</option>
@@ -211,7 +211,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="cell-md-4 cell-sm-6 offset-top-30">
+                    {{--<div class="cell-md-4 cell-sm-6 offset-top-30">
                         <div class="pricing-box pricing-box-warning pricing-box-right">
                             <div class="pricing-box-title">Бесплатная</div>
                             <div class="pricing-box-panel">
@@ -240,7 +240,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </section>
