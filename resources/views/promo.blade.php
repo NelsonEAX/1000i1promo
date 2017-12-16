@@ -638,8 +638,7 @@
                            value="{{ $request['liame'] }}" required placeholder="Введите ваш email">
                 </div>
                 <div class="hidden">
-                    <input id="email" type="email" name="email" class="form-control form-control-inverse"
-                           value="{{ $request['email'] }}" placeholder="Введите ваш email">
+                    <input id="email" type="email" name="email">
                 </div>
                 <button type="submit" class="btn btn-block">Получить <span class="hidden-xs">программу</span></button>
                 {{ Form::close() }}
