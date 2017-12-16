@@ -80,19 +80,19 @@ class PromoController extends Controller
         $data['request']['time2'] = $request->time == $data['time_gap2'] ? ' selected' : '';
         $data['request']['time3'] = $request->time == $data['time_gap3'] ? ' selected' : '';
         $data['request']['phone'] = $request->phone ? $request->phone : '';
-        $data['request']['email'] = $request->email ? $request->email : '';
+        $data['request']['liame'] = $request->liame ? $request->liame : '';
         $data['request']['adres'] = $request->adres ? $request->adres : '';
 
         //dd($request->email);
         //dd($request->file('images'));
         if ( !$request->phone && !$request->adres && !$request->date &&
-             !$request->time && !$request->email && !$request->file('images') ){
+             !$request->time && !$request->liame && !$request->file('images') ){
 
-        } else if ( $request->email ){
+        } else if ( $request->liame ){
         // Получили почту - отправляем на нее ссылку на файл
 
             $validator = Validator::make($request->all(), [
-                'email' => 'required|max:255|email'
+                'liame' => 'required|max:255|email'
             ]);
 
             if ($validator->fails()) {
@@ -103,17 +103,17 @@ class PromoController extends Controller
 
                 // Если значение уникально - пишем в базу
                 $unique = Validator::make($request->all(), [
-                    'email' => 'unique:emails,email'
+                    'liame' => 'unique:emails,email'
                 ]);
 
                 if (!$unique->fails()) {
                     $email = new Email;
-                    $email->email = $request->email;
+                    $email->email = $request->liame;
                     $email->save();
                 }
 
                 // Отправляем письмо
-                $email_adres = $request->email;
+                $email_adres = $request->liame;
                 $email_info = [];
                 $email_info['title'] = $data['url'];
                 $email_info['href'] = $data['href'];

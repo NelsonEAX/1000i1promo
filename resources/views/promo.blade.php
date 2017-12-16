@@ -634,8 +634,12 @@
                 <div class="form-group">
                     <span class="form-icon fa-envelope"></span>
                     {{--<label for="email" class="form-label form-label-inverse">email</label>--}}
+                    <input id="liame" type="liame" name="liame" class="form-control form-control-inverse"
+                           value="{{ $request['liame'] }}" required placeholder="Введите ваш email">
+                </div>
+                <div class="hidden">
                     <input id="email" type="email" name="email" class="form-control form-control-inverse"
-                           value="{{ $request['email'] }}" required placeholder="Введите ваш email">
+                           value="{{ $request['email'] }}" placeholder="Введите ваш email">
                 </div>
                 <button type="submit" class="btn btn-block">Получить <span class="hidden-xs">программу</span></button>
                 {{ Form::close() }}
