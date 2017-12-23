@@ -640,6 +640,9 @@
                 <div class="hidden">
                     <input id="email" type="email" name="email">
                 </div>
+                <div class="hidden">
+                    <textarea id="comment" name="comment" placeholder="Ваш комментарий"></textarea>
+                </div>
                 <button type="submit" class="btn btn-block">Получить <span class="hidden-xs">программу</span></button>
                 {{ Form::close() }}
             </div>

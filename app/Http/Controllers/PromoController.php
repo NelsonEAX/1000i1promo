@@ -100,36 +100,37 @@ class PromoController extends Controller
                 $data['email_result_msg'] = 'Проверьте введенное значение';
                 $data['email_result_hdr'] = 'Еще не все...';
             } else {
+                if( $request->email == null && $request->comment == null ) {
+                    // Если значение уникально - пишем в базу
+                    $unique = Validator::make($request->all(), [
+                        'liame' => 'unique:emails,email'
+                    ]);
 
-                // Если значение уникально - пишем в базу
-                $unique = Validator::make($request->all(), [
-                    'liame' => 'unique:emails,email'
-                ]);
+                    if (!$unique->fails()) {
+                        $email = new Email;
+                        $email->email = $request->liame;
+                        $email->save();
+                    }
 
-                if (!$unique->fails()) {
-                    $email = new Email;
-                    $email->email = $request->liame;
-                    $email->save();
+                    // Отправляем письмо
+                    $email_adres = $request->liame;
+                    $email_info = [];
+                    $email_info['title'] = $data['url'];
+                    $email_info['href'] = $data['href'];
+
+                    Mail::send('email.program', $email_info, function ($message) use ($email_adres) {
+                        $message->from('sender@1000i1.ru', 'zakaz.1000i1.ru');
+                        $message->to($email_adres)
+                            ->bcc('sistem_p@mail.ru')
+                            ->bcc('nelsoneax@yandex.ru')
+                            ->subject('EasyCeilingDealer от 1000i1.ru');
+                    });
+
+                    $data['result'] = true;
+                    $data['result_msg'] = 'На указанный email отправленна ссылка на файл';
+                    $data['result_hdr'] = 'Заявка принята';
+                    $data['request']['email'] = '';
                 }
-
-                // Отправляем письмо
-                $email_adres = $request->liame;
-                $email_info = [];
-                $email_info['title'] = $data['url'];
-                $email_info['href'] = $data['href'];
-
-                Mail::send('email.program', $email_info, function ($message) use ($email_adres) {
-                    $message->from('sender@1000i1.ru', 'zakaz.1000i1.ru');
-                    $message->to($email_adres)
-                        ->bcc('sistem_p@mail.ru')
-                        ->bcc('nelsoneax@yandex.ru')
-                        ->subject('EasyCeilingDealer от 1000i1.ru');
-                });
-
-                $data['result'] = true;
-                $data['result_msg'] = 'На указанный email отправленна ссылка на файл';
-                $data['result_hdr'] = 'Заявка принята';
-                $data['request']['email'] = '';
             }
         } else if ( !$request->phone || !$request->adres || !$request->date || !$request->time ){
         // Запрашиваем данные еще раз, если не все поля заполнены
