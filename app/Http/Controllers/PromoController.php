@@ -37,12 +37,12 @@ class PromoController extends Controller
         $data['title'] = "Натяжные потолки для дилеров в Екатеринбурге";
 
         $data['og'] = [
-            'site_name' => 'Название сайта',
-            'title' => 'Заголовок',
-            'description' => 'Описание.',
+            'site_name' => '1000i1.ru',//Название сайта',
+            'title' => 'Натяжные потолки дилерам',//'Заголовок',
+            'description' => 'Работает доставка натяжных потолков в Екатеринбурге и Свердловской области, в том числе БЕСПЛАТНАЯ',//'Описание.',
             'url' => 'http://zakaz.1000i1.ru',
             'domain' => 'zakaz.1000i1.ru',
-            'image' => 'http://placehold.it/968x504',
+            'image' => 'http://zakaz.1000i1.ru/promo/images/og.png',//'http://placehold.it/968x504',
             //Не требующие изменений
             'image_width' => '968',
             'image_height' => '504',

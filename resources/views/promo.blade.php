@@ -211,7 +211,7 @@
                             </div>
                         </div>
                     </div>
-                    {{--<div class="cell-md-4 cell-sm-6 offset-top-30">
+                    <div class="cell-md-4 cell-sm-6 offset-top-30">
                         <div class="pricing-box pricing-box-warning pricing-box-right">
                             <div class="pricing-box-title">Бесплатная</div>
                             <div class="pricing-box-panel">
@@ -221,7 +221,7 @@
                             </div>
                             <div class="pricing-box-body">
                                 <ul class="list-marked">
-                                    <li>Заказ от 7000р</li>
+                                    <li>Заказ от 10 001р</li>
                                 </ul>
                             </div>
                         </div>
@@ -236,11 +236,11 @@
                             </div>
                             <div class="pricing-box-body">
                                 <ul class="list-marked">
-                                    <li>Заказ от 10000р</li>
+                                    <li>Заказ от 15 001р</li>
                                 </ul>
                             </div>
                         </div>
-                    </div>--}}
+                    </div>
                 </div>
             </div>
         </section>
@@ -529,7 +529,7 @@
                 </div>
                 <div class="cell-md-3 cell-sm-6 offset-top-30 offset-md-top-0"><span class="icon icon-lg text-warning fa-clock-o"></span>
                     <p class="text-uppercase text-success footer-heading">Время работы: </p>
-                    <p>приём заказов круглосуточно<br class="veil reveal-sm-block"> самовывоз с 8:00-19:00</p>
+                    <p>приём заказов с 8:00 по 22:00<br class="veil reveal-sm-block"> самовывоз с 8:00-19:00</p>
                 </div>
             </div>
         </div>
