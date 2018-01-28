@@ -731,7 +731,12 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/46723851" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript>
+    <div>
+        <img src="https://mc.yandex.ru/watch/46723851" style="position:absolute; left:-9999px;" alt="" />
+    </div>
+</noscript>
+<img src="https://mc.yandex.ru/pixel/3480088152072340524" />
 <!-- /Yandex.Metrika counter -->
 </body>
 </html>
